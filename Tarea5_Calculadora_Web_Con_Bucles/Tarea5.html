@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora con Bucle</title>
+    <style>
+        /* Estilos para centrar todo en la página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        /* Caja blanca principal */
+        .container {
+            background-color: white;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Título */
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        /* Espaciado entre campos */
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        /* Etiquetas de los campos */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* Campos de entrada de números */
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Botón de calcular */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Efecto al pasar el mouse sobre el botón */
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Área de resultados */
+        .resultados {
+            margin-top: 20px;
+            display: none;
+        }
+
+        /* Mostrar resultados cuando se active */
+        .resultados.show {
+            display: block;
+        }
+
+        /* Cada resultado individual */
+        .resultado-item {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid #4CAF50;
+            border-radius: 3px;
+        }
+
+        /* Mensaje de error */
+        .error {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Mostrar error cuando se active */
+        .error.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora con Bucle</h1>
+
+        <!-- Campo para el primer número -->
+        <div class="input-group">
+            <label>Primer Número:</label>
+            <input type="number" id="numero1">
+        </div>
+
+        <!-- Campo para el segundo número -->
+        <div class="input-group">
+            <label>Segundo Número:</label>
+            <input type="number" id="numero2">
+        </div>
+
+        <!-- Botón que ejecuta la función calcular() -->
+        <button onclick="calcular()">Calcular</button>
+
+        <!-- Mensaje de error (oculto por defecto) -->
+        <div class="error" id="error"></div>
+
+        <!-- Contenedor de resultados (oculto por defecto) -->
+        <div class="resultados" id="resultados">
+            <h2>Resultados:</h2>
+            <div id="contenido-resultados"></div>
+        </div>
+    </div>
+
+    <script>
+        // Función que hace los cálculos
+        function calcular() {
+            // Obtener el primer número del campo de entrada
+            var numero1 = parseFloat(document.getElementById('numero1').value);
+            // Obtener el segundo número del campo de entrada
+            var numero2 = parseFloat(document.getElementById('numero2').value);
+            
+            // Obtener referencias a los elementos HTML
+            var contenidoResultados = document.getElementById('contenido-resultados');
+            var resultadosDiv = document.getElementById('resultados');
+            var errorDiv = document.getElementById('error');
+
+            // Verificar que los números sean válidos
+            if (isNaN(numero1) || isNaN(numero2)) {
+                errorDiv.textContent = 'Por favor, ingrese ambos números';
+                errorDiv.classList.add('show');
+                resultadosDiv.classList.remove('show');
+                return;
+            }
+
+            // Ocultar error y limpiar resultados anteriores
+            errorDiv.classList.remove('show');
+            contenidoResultados.innerHTML = '';
+
+            // BUCLE DE 5 ITERACIONES - Aquí se cumplen los 5 pasos requeridos
+            for (var i = 1; i <= 5; i++) {
+                var resultado;
+                var operacion;
+
+                // Según el número de iteración, hacer una operación diferente
+                if (i === 1) {
+                    // ITERACIÓN 1: SUMA
+                    resultado = numero1 + numero2;
+                    operacion = numero1 + ' + ' + numero2 + ' = ' + resultado;
+                }
+                else if (i === 2) {
+                    // ITERACIÓN 2: RESTA
+                    resultado = numero1 - numero2;
+                    operacion = numero1 + ' - ' + numero2 + ' = ' + resultado;
+                }
+                else if (i === 3) {
+                    // ITERACIÓN 3: MULTIPLICACIÓN
+                    resultado = numero1 * numero2;
+                    operacion = numero1 + ' × ' + numero2 + ' = ' + resultado;
+                }
+                else if (i === 4) {
+                    // ITERACIÓN 4: DIVISIÓN
+                    if (numero2 === 0) {
+                        operacion = numero1 + ' ÷ ' + numero2 + ' = No se puede dividir por cero';
+                    } else {
+                        resultado = numero1 / numero2;
+                        operacion = numero1 + ' ÷ ' + numero2 + ' = ' + resultado;
+                    }
+                }
+                else if (i === 5) {
+                    // ITERACIÓN 5: MÓDULO (%)
+                    if (numero2 === 0) {
+                        operacion = numero1 + ' % ' + numero2 + ' = No se puede calcular módulo por cero';
+                    } else {
+                        resultado = numero1 % numero2;
+                        operacion = numero1 + ' % ' + numero2 + ' = ' + resultado;
+                    }
+                }
+
+                // Crear el HTML para mostrar cada resultado
+                var resultadoHTML = '<div class="resultado-item">';
+                resultadoHTML += '<strong>Iteración ' + i + ':</strong> ' + operacion;
+                resultadoHTML += '</div>';
+
+                // Agregar el resultado al contenedor
+                contenidoResultados.innerHTML += resultadoHTML;
+            }
+
+            // Mostrar el contenedor de resultados
+            resultadosDiv.classList.add('show');
+        }
+    </script>
+</body>
+</html>
