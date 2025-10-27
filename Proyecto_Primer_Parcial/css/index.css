@@ -1,0 +1,39 @@
+/* CSS ESPECÍFICO - index.html (Landing Page) */
+
+.hero {
+    background: linear-gradient(135deg, var(--uleam-rojo) 0%, var(--uleam-verde) 100%);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat bottom;
+    background-size: cover;
+    pointer-events: none;
+}
+
+.hero > div {
+    position: relative;
+    z-index: 1;
+}
+
+/* Landing Page - Características Grid */
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 30px 15px;
+    }
+}

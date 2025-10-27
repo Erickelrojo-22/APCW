@@ -1,0 +1,173 @@
+/* CSS ESPECÍFICO - registro.html */
+
+.registro-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.registro-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.registro-header h2 {
+    color: var(--uleam-rojo);
+    margin-bottom: 10px;
+}
+
+.registro-header p {
+    color: var(--uleam-gris);
+    font-size: 16px;
+}
+
+.registro-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--uleam-gris-claro);
+}
+
+.form-section:last-child {
+    border-bottom: none;
+}
+
+.form-section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--uleam-rojo);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-row.full {
+    grid-template-columns: 1fr;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--uleam-oscuro);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--uleam-rojo);
+    box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+    outline: none;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-weight: 400;
+    cursor: pointer;
+    color: var(--uleam-gris);
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.form-actions button {
+    padding: 12px 40px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.form-actions .btn-registrar {
+    background: var(--uleam-verde);
+    color: white;
+    box-shadow: 0 4px 12px rgba(34, 139, 34, 0.3);
+}
+
+.form-actions .btn-registrar:hover {
+    background: #1a6b1a;
+    box-shadow: 0 6px 20px rgba(34, 139, 34, 0.4);
+    transform: translateY(-2px);
+}
+
+.form-actions .btn-cancelar {
+    background: #e0e0e0;
+    color: var(--uleam-oscuro);
+}
+
+.form-actions .btn-cancelar:hover {
+    background: #d0d0d0;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .registro-form {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .registro-container {
+        margin: 20px auto;
+    }
+    
+    .registro-form {
+        padding: 15px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions button {
+        width: 100%;
+    }
+}

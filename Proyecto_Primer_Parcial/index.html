@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Seguimiento a Graduados - ULEAM</title>
+    
+    <!-- Custom CSS - Sin Bootstrap -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div class="hero" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%;">
+            <div style="display: flex; justify-content: center; margin-bottom: 40px;">
+                <!-- Logo Principal -->
+                <div style="width: 150px; height: 150px; background: rgba(255,255,255,0.15); border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.1); backdrop-filter: blur(4px); overflow: hidden;">
+                    <img src="assets/logo-uleam.png" alt="Logo ULEAM" style="width: 100%; height: 100%; object-fit: contain; padding: 15px; border-radius: 50%;">
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h1 style="font-size: 52px; margin-bottom: 10px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">Sistema de Seguimiento a Graduados</h1>
+                <p style="font-size: 22px; margin: 0; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">Universidad Laica Eloy Alfaro de Manabí</p>
+            </div>
+                    
+            <!-- Botones de Navegación -->
+            <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 80px; flex-wrap: wrap;">
+                <a href="login.html" class="btn btn-light btn-lg" style="padding: 14px 40px; font-size: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); font-weight: 600;">
+                    Iniciar Sesión
+                </a>
+                <a href="registro.html" class="btn btn-outline-light btn-lg" style="padding: 14px 40px; font-size: 16px; font-weight: 600;">
+                    Registrarse
+                </a>
+            </div>
+
+            <!-- Características del Sistema -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 50px;">
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); padding: 30px 25px; border-radius: 15px; text-align: center; transition: var(--transition); cursor: pointer;"
+                     onmouseover="this.style.background='rgba(255,255,255,0.15)'; this.style.transform='translateY(-8px)'"
+                     onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
+                    <h4 style="margin-bottom: 10px; color: white; font-size: 20px; font-weight: 700;">Perfil de Graduado</h4>
+                    <p style="font-size: 15px; margin: 0; opacity: 0.9;">Gestiona tu información personal, académica y laboral</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); padding: 30px 25px; border-radius: 15px; text-align: center; transition: var(--transition); cursor: pointer;"
+                     onmouseover="this.style.background='rgba(255,255,255,0.15)'; this.style.transform='translateY(-8px)'"
+                     onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
+                    <h4 style="margin-bottom: 10px; color: white; font-size: 20px; font-weight: 700;">Seguimiento Laboral</h4>
+                    <p style="font-size: 15px; margin: 0; opacity: 0.9;">Monitoreo del estado laboral de todos los graduados</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); padding: 30px 25px; border-radius: 15px; text-align: center; transition: var(--transition); cursor: pointer;"
+                     onmouseover="this.style.background='rgba(255,255,255,0.15)'; this.style.transform='translateY(-8px)'"
+                     onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
+                    <h4 style="margin-bottom: 10px; color: white; font-size: 20px; font-weight: 700;">Reportes Estadísticos</h4>
+                    <p style="font-size: 15px; margin: 0; opacity: 0.9;">Análisis y visualización de datos institucionales</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer style="background: rgba(0,0,0,0.4); margin-top: auto; padding: 30px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <p style="margin-bottom: 8px; color: white; font-weight: 600;">
+                    Universidad Laica Eloy Alfaro de Manabí
+                </p>
+                <small style="color: rgba(255,255,255,0.8);">Sistema de Seguimiento a Graduados © 2025 - Proyecto Académico</small>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
