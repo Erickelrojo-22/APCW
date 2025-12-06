@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes y Estadísticas - ULEAM</title>
+    
+    <!-- Custom CSS - Sin Bootstrap -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/reportes.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-custom">
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
+            <a href="admin-dashboard.html" style="color: white; font-weight: 700; text-decoration: none; font-size: 1.2rem;">
+                ULEAM - Reportes y Estadísticas
+            </a>
+            <div style="display: flex; gap: 2rem; align-items: center;">
+                <a href="admin-dashboard.html" style="color: white; font-weight: 500; text-decoration: none; transition: opacity 0.3s;">
+                    Inicio
+                </a>
+                <a href="admin-seguimiento.html" style="color: white; font-weight: 500; text-decoration: none; transition: opacity 0.3s;">
+                    Seguimiento
+                </a>
+                <a href="admin-usuarios.html" style="color: white; font-weight: 500; text-decoration: none; transition: opacity 0.3s;">
+                    Usuarios
+                </a>
+                <a href="index.html" style="color: white; font-weight: 500; text-decoration: none; transition: opacity 0.3s;">
+                    Cerrar Sesión
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container-fluid my-5">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
+            <!-- Header -->
+            <div class="row mb-5 fade-in">
+                <div class="col-12">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <div>
+                            <h2 style="color: #333; font-weight: 700; margin-bottom: 0.5rem;">Reportes y Estadísticas</h2>
+                            <p style="color: #666; margin: 0; font-size: 1rem;">Análisis estadístico del seguimiento a graduados de la ULEAM</p>
+                        </div>
+                        <div>
+                            <button id="btnExportJSON" class="btn btn-uleam-verde btn-lg" style="margin-right: 10px;">
+                                📄 JSON
+                            </button>
+                            <button id="btnExportXML" class="btn btn-uleam-verde btn-lg" style="margin-right: 10px;">
+                                📄 XML
+                            </button>
+                            <button id="btnDescargarPDF" class="btn btn-uleam-rojo btn-lg">
+                                📥 Descargar Reporte PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjetas de Estadísticas Principales -->
+            <div class="stats-grid">
+                <div class="stat-card stat-card-verde">
+                    <div class="stat-number">1,245</div>
+                    <div class="stat-label">Total Graduados</div>
+                </div>
+                <div class="stat-card stat-card-verde">
+                    <div class="stat-number">71.6%</div>
+                    <div class="stat-label">Tasa de Empleo</div>
+                </div>
+                <div class="stat-card stat-card-naranja">
+                    <div class="stat-number">175</div>
+                    <div class="stat-label">Emprendedores</div>
+                </div>
+                <div class="stat-card stat-card-azul">
+                    <div class="stat-number">89</div>
+                    <div class="stat-label">En Posgrado</div>
+                </div>
+            </div>
+
+            <!-- Gráficos Principales -->
+            <div class="charts-grid">
+                <!-- Gráfico Circular: Estado Laboral -->
+                <div class="chart-card fade-in">
+                    <div class="chart-header">
+                        <h5>Distribución por Estado Laboral</h5>
+                    </div>
+                    <div class="chart-body">
+                        <div class="chart-container">
+                            <canvas id="estadoLaboralChart"></canvas>
+                        </div>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #228B22;"></span>
+                                <div class="legend-text">
+                                    <strong>892</strong>
+                                    <span>Empleados</span>
+                                </div>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #DC143C;"></span>
+                                <div class="legend-text">
+                                    <strong>178</strong>
+                                    <span>Desempleados</span>
+                                </div>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #FF9800;"></span>
+                                <div class="legend-text">
+                                    <strong>175</strong>
+                                    <span>Emprendedores</span>
+                                </div>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #2196F3;"></span>
+                                <div class="legend-text">
+                                    <strong>89</strong>
+                                    <span>Posgrado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Barras: Graduados por Carrera -->
+                <div class="chart-card fade-in">
+                    <div class="chart-header">
+                        <h5>Graduados por Carrera</h5>
+                    </div>
+                    <div class="chart-body">
+                        <div class="chart-container">
+                            <canvas id="carrerasChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráficos Secundarios -->
+            <div class="charts-grid-secondary">
+                <!-- Gráfico de Líneas: Graduados por Año -->
+                <div class="chart-card-large fade-in">
+                    <div class="chart-header">
+                        <h5>Tendencia de Graduados por Año</h5>
+                    </div>
+                    <div class="chart-body">
+                        <div class="chart-container">
+                            <canvas id="tendenciaChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ranking de Carreras -->
+                <div class="chart-card-small fade-in">
+                    <div class="chart-header">
+                        <h5>Top 5 Carreras</h5>
+                    </div>
+                    <div class="chart-body">
+                        <div class="ranking-list">
+                            <div class="ranking-item">
+                                <div class="ranking-info">
+                                    <span class="ranking-number">1.</span>
+                                    <span class="ranking-name">Ingeniería en Sistemas</span>
+                                </div>
+                                <span class="ranking-badge">234</span>
+                                <div class="ranking-bar">
+                                    <div class="ranking-bar-fill" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="ranking-item">
+                                <div class="ranking-info">
+                                    <span class="ranking-number">2.</span>
+                                    <span class="ranking-name">Medicina</span>
+                                </div>
+                                <span class="ranking-badge">198</span>
+                                <div class="ranking-bar">
+                                    <div class="ranking-bar-fill" style="width: 84%;"></div>
+                                </div>
+                            </div>
+                            <div class="ranking-item">
+                                <div class="ranking-info">
+                                    <span class="ranking-number">3.</span>
+                                    <span class="ranking-name">Derecho</span>
+                                </div>
+                                <span class="ranking-badge">167</span>
+                                <div class="ranking-bar">
+                                    <div class="ranking-bar-fill" style="width: 71%;"></div>
+                                </div>
+                            </div>
+                            <div class="ranking-item">
+                                <div class="ranking-info">
+                                    <span class="ranking-number">4.</span>
+                                    <span class="ranking-name">Contabilidad</span>
+                                </div>
+                                <span class="ranking-badge">145</span>
+                                <div class="ranking-bar">
+                                    <div class="ranking-bar-fill" style="width: 62%;"></div>
+                                </div>
+                            </div>
+                            <div class="ranking-item">
+                                <div class="ranking-info">
+                                    <span class="ranking-number">5.</span>
+                                    <span class="ranking-name">Ing. Civil</span>
+                                </div>
+                                <span class="ranking-badge">132</span>
+                                <div class="ranking-bar">
+                                    <div class="ranking-bar-fill" style="width: 56%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de Empleabilidad por Facultad -->
+            <div class="employment-table-container fade-in">
+                <div class="table-header">
+                    <h5>Tasa de Empleabilidad por Facultad</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="employment-table">
+                        <thead>
+                            <tr>
+                                <th>Facultad</th>
+                                <th>Total Graduados</th>
+                                <th>Empleados</th>
+                                <th>Desempleados</th>
+                                <th>Tasa de Empleo</th>
+                                <th>Progreso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Ciencias Informáticas</strong></td>
+                                <td>234</td>
+                                <td>189</td>
+                                <td>45</td>
+                                <td><span class="badge badge-success">80.8%</span></td>
+                                <td>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar-fill progress-success" style="width: 80.8%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ciencias de la Salud</strong></td>
+                                <td>198</td>
+                                <td>157</td>
+                                <td>41</td>
+                                <td><span class="badge badge-success">79.3%</span></td>
+                                <td>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar-fill progress-success" style="width: 79.3%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ciencias Jurídicas</strong></td>
+                                <td>167</td>
+                                <td>98</td>
+                                <td>69</td>
+                                <td><span class="badge badge-warning">58.7%</span></td>
+                                <td>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar-fill progress-warning" style="width: 58.7%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ciencias Administrativas</strong></td>
+                                <td>145</td>
+                                <td>112</td>
+                                <td>33</td>
+                                <td><span class="badge badge-success">77.2%</span></td>
+                                <td>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar-fill progress-success" style="width: 77.2%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: #333; color: white; padding: 2rem 0; margin-top: 3rem;">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem; text-align: center;">
+            <p style="margin: 0 0 0.5rem 0; font-size: 1rem;">
+                Universidad Laica Eloy Alfaro de Manabí - Sistema de Seguimiento a Graduados
+            </p>
+            <small style="color: #aaa;">© 2025 - Todos los derechos reservados</small>
+        </div>
+    </footer>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/utils.js"></script>
+    <script src="js/reportes.js"></script>
+</body>
+</html>

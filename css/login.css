@@ -1,0 +1,176 @@
+/* CSS ESPECÍFICO - login.html */
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--uleam-rojo) 0%, var(--uleam-verde) 100%);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-container::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+}
+
+.login-container::after {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    bottom: -80px;
+    left: -80px;
+}
+
+.login-card {
+    background: white;
+    border-radius: 16px;
+    padding: 50px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    max-width: 450px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.logo-placeholder {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--uleam-rojo) 0%, var(--uleam-verde) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.logo-placeholder img {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn-uleam-rojo {
+    background: linear-gradient(135deg, var(--uleam-rojo) 0%, #b71c1c 100%);
+    color: white;
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.3);
+}
+
+.btn-uleam-rojo:hover {
+    box-shadow: 0 8px 30px rgba(220, 20, 60, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-uleam-verde {
+    background: linear-gradient(135deg, var(--uleam-verde) 0%, #1a6b1a 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(34, 139, 34, 0.3);
+}
+
+.btn-uleam-verde:hover {
+    box-shadow: 0 8px 30px rgba(34, 139, 34, 0.4);
+    transform: translateY(-2px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--uleam-oscuro);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-group input {
+    border: 2px solid #e0e0e0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    border-color: var(--uleam-rojo);
+    box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+hr {
+    margin: 25px 0;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+}
+
+.link-section {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.link-section a {
+    color: var(--uleam-rojo);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.link-section a:hover {
+    color: var(--uleam-verde);
+    text-decoration: underline;
+}
+
+.register-link {
+    background: var(--uleam-gris-claro);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link p {
+    margin: 0 0 10px 0;
+    color: var(--uleam-gris);
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 30px 20px;
+    }
+}

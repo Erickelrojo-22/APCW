@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento Laboral - ULEAM Administrador</title>
+    
+    <!-- Custom CSS - Sin Bootstrap -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/admin-seguimiento.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid" style="max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem;">
+            <a class="navbar-brand" href="#" style="color: white; font-weight: 700; text-decoration: none;">
+                ULEAM - Panel Administrativo
+            </a>
+            <div style="display: flex; gap: 2rem; align-items: center;">
+                <a href="admin-dashboard.html" style="color: white; font-weight: 500; text-decoration: none; transition: opacity 0.3s ease;">
+                    Inicio
+                </a>
+                <a href="reportes.html" style="color: white; font-weight: 500; text-decoration: none; transition: opacity 0.3s ease;">
+                    Reportes
+                </a>
+                <a href="admin-usuarios.html" style="color: white; font-weight: 500; text-decoration: none; transition: opacity 0.3s ease;">
+                    Usuarios
+                </a>
+                <a href="index.html" style="color: white; font-weight: 500; text-decoration: none; transition: opacity 0.3s ease;">
+                    Cerrar Sesión
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container-fluid" style="padding: 2rem;">
+        <!-- Header -->
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+            <h2 style="font-weight: 700; color: #333; margin-bottom: 0.5rem;">
+                Seguimiento Laboral de Graduados
+            </h2>
+            <p style="color: #888; font-size: 1rem;">Administración y monitoreo de la situación laboral de todos los graduados</p>
+        </div>
+
+        <!-- Dashboard de Estadísticas -->
+        <div style="max-width: 1200px; margin: 0 auto 3rem auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <!-- Card 1: Total Graduados -->
+                <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); padding: 2rem; text-align: center; border-top: 4px solid var(--uleam-verde); transition: all 0.3s ease;">
+                    <h3 style="font-size: 2.5rem; font-weight: 700; color: #333; margin: 0 0 0.5rem 0;">1,245</h3>
+                    <p style="color: #888; font-size: 0.95rem; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Total Graduados</p>
+                </div>
+
+                <!-- Card 2: Empleados -->
+                <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); padding: 2rem; text-align: center; border-top: 4px solid var(--uleam-verde); transition: all 0.3s ease;">
+                    <h3 style="font-size: 2.5rem; font-weight: 700; color: #333; margin: 0 0 0.5rem 0;">892</h3>
+                    <p style="color: #888; font-size: 0.95rem; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Empleados</p>
+                </div>
+
+                <!-- Card 3: Desempleados -->
+                <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); padding: 2rem; text-align: center; border-top: 4px solid #DC143C; transition: all 0.3s ease;">
+                    <h3 style="font-size: 2.5rem; font-weight: 700; color: #333; margin: 0 0 0.5rem 0;">178</h3>
+                    <p style="color: #888; font-size: 0.95rem; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Desempleados</p>
+                </div>
+
+                <!-- Card 4: Emprendedores -->
+                <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); padding: 2rem; text-align: center; border-top: 4px solid var(--uleam-verde); transition: all 0.3s ease;">
+                    <h3 style="font-size: 2.5rem; font-weight: 700; color: #333; margin: 0 0 0.5rem 0;">175</h3>
+                    <p style="color: #888; font-size: 0.95rem; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Emprendedores</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtros y Búsqueda -->
+        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); padding: 2rem; margin-bottom: 2rem; max-width: 1200px; margin: 0 auto 2rem auto;">
+            <h5 style="color: #333; font-weight: 700; margin-bottom: 1.5rem;">Buscar por Nombre o Cédula</h5>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; align-items: end;">
+                <div>
+                    <input type="text" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px; transition: border-color 0.3s ease;" id="searchInput" placeholder="Ingrese nombre o cédula...">
+                </div>
+                <div>
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #555; font-size: 0.9rem;">Filtrar por Carrera</label>
+                    <select style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;" id="filterCarrera">
+                        <option value="">Todas las carreras</option>
+                        <optgroup label="Facultad Ciencias de la Salud">
+                            <option value="medicina">Medicina</option>
+                            <option value="odontologia">Odontología</option>
+                            <option value="enfermeria">Enfermería</option>
+                            <option value="fisioterapia">Fisioterapia</option>
+                            <option value="fonoaudiologia">Fonoaudiología</option>
+                            <option value="laboratorio-clinico">Laboratorio Clínico</option>
+                            <option value="terapia-ocupacional">Terapia Ocupacional</option>
+                            <option value="psicologia">Psicología</option>
+                            <option value="nutricion">Nutrición y Dietética</option>
+                        </optgroup>
+                        <optgroup label="Facultad Ciencias Administrativas, Contables y Comercio">
+                            <option value="administracion-empresas">Administración de Empresas</option>
+                            <option value="mercadotecnia">Mercadotecnia</option>
+                            <option value="contabilidad-auditoria">Contabilidad y Auditoría</option>
+                            <option value="auditoria-control">Auditoría y Control de Gestión</option>
+                            <option value="finanzas">Finanzas</option>
+                            <option value="comercio-exterior">Comercio Exterior</option>
+                            <option value="gestion-informacion">Gestión de la Información Gerencial</option>
+                            <option value="talento-humano">Gestión del Talento Humano</option>
+                        </optgroup>
+                        <optgroup label="Facultad de Educación Turismo Artes y Humanidades">
+                            <option value="educacion-inicial">Educación Inicial</option>
+                            <option value="educacion-especial">Educación Especial</option>
+                            <option value="psicologia-educativa">Psicología Educativa</option>
+                            <option value="educacion-basica">Educación Básica</option>
+                            <option value="actividad-fisica">Pedagogía de la Actividad Física y el Deporte</option>
+                            <option value="lengua-literatura">Pedagogía de la Lengua y la Literatura</option>
+                            <option value="idiomas">Pedagogía de los Idiomas Nacionales y Extranjeros</option>
+                            <option value="turismo">Turismo</option>
+                            <option value="hospitalidad-hoteleria">Hospitalidad y Hotelería</option>
+                            <option value="artes-plasticas">Artes Plásticas</option>
+                            <option value="sociologia">Sociología</option>
+                                <option value="artes-escenicas">Artes Escénicas</option>
+                                <option value="educacion-bilingue">Educación Básica Bilingüe</option>
+                                <option value="arqueologia">Arqueología</option>
+                                <option value="diseno-textil">Diseño Textil e Indumentaria</option>
+                                <option value="educacion-inicial-bilingue">Educación Inicial Bilingüe</option>
+                                <option value="entrenamiento-deportivo">Entrenamiento Deportivo</option>
+                                <option value="gestion-hotelera">Gestión Hotelera Internacional</option>
+                                <option value="educacion-inclusiva">Educación Inclusiva</option>
+                            </optgroup>
+                            <optgroup label="Facultad Ingeniería, Industria y Arquitectura">
+                                <option value="ingenieria-civil">Ingeniería Civil</option>
+                                <option value="ingenieria-maritima">Ingeniería Marítima</option>
+                                <option value="electricidad">Electricidad</option>
+                                <option value="arquitectura">Arquitectura</option>
+                                <option value="ingenieria-industrial">Ingeniería Industrial</option>
+                            </optgroup>
+                            <optgroup label="Facultad Ciencias de la Vida y Tecnologías">
+                                <option value="ingenieria-agropecuaria">Ingeniería Agropecuaria</option>
+                                <option value="agronegocios">Agronegocios</option>
+                                <option value="ingenieria-agroindustrial">Ingeniería Agroindustrial</option>
+                                <option value="ingenieria-ambiental">Ingeniería Ambiental</option>
+                                <option value="ingenieria-ti">Ingeniería en Tecnologías de la Información</option>
+                                <option value="ingenieria-software">Ingeniería en Software</option>
+                                <option value="ingenieria-sistemas">Ingeniería en Sistemas</option>
+                                <option value="biologia">Biología</option>
+                                <option value="ingenieria-alimentos">Ingeniería de Alimentos</option>
+                            </optgroup>
+                            <optgroup label="Facultad de Ciencias Sociales Derecho y Bienestar">
+                                <option value="derecho">Derecho</option>
+                                <option value="criminologia">Criminología y Ciencias Forenses</option>
+                                <option value="economia">Economía</option>
+                                <option value="trabajo-social">Trabajo Social</option>
+                                <option value="comunicacion">Comunicación</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #555; font-size: 0.9rem;">Año de Graduación</label>
+                        <select style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;" id="filterAnio">
+                            <option value="">Todos los años</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #555; font-size: 0.9rem;">Estado Laboral</label>
+                        <select style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;" id="filterEstado">
+                            <option value="">Todos los estados</option>
+                            <option value="empleado">Empleado</option>
+                            <option value="desempleado">Desempleado</option>
+                            <option value="emprendimiento">Emprendimiento</option>
+                            <option value="posgrado">Estudios de Posgrado</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: center;">
+                    <button style="background-color: var(--uleam-verde); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        Aplicar Filtros
+                    </button>
+                    <button style="background-color: #f5f5f5; color: #666; border: 2px solid #ddd; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        Limpiar Filtros
+                    </button>
+                    <button style="background-color: var(--uleam-rojo); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        Exportar a Excel
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de Graduados -->
+        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); overflow: hidden; max-width: 1200px; margin: 0 auto;">
+            <div style="background-color: #f8f9fa; border-bottom: 2px solid #ddd; padding: 1.25rem;">
+                <h5 style="margin: 0; color: #333; font-weight: 700;">Lista de Graduados Registrados</h5>
+            </div>
+            <div style="padding: 0;">
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead style="background-color: #f8f9fa;">
+                            <tr>
+                                <th style="padding: 1rem; text-align: left; font-weight: 600; color: #555; border-bottom: 2px solid #dee2e6;">#</th>
+                                <th style="padding: 1rem; text-align: left; font-weight: 600; color: #555; border-bottom: 2px solid #dee2e6;">Nombre Completo</th>
+                                <th style="padding: 1rem; text-align: left; font-weight: 600; color: #555; border-bottom: 2px solid #dee2e6;">Cédula</th>
+                                <th style="padding: 1rem; text-align: left; font-weight: 600; color: #555; border-bottom: 2px solid #dee2e6;">Carrera</th>
+                                <th>Año</th>
+                                <th>Empresa</th>
+                                <th style="padding: 1rem; text-align: left; font-weight: 600; color: #555; border-bottom: 2px solid #dee2e6;">Año</th>
+                                <th style="padding: 1rem; text-align: left; font-weight: 600; color: #555; border-bottom: 2px solid #dee2e6;">Empresa</th>
+                                <th style="padding: 1rem; text-align: left; font-weight: 600; color: #555; border-bottom: 2px solid #dee2e6;">Cargo</th>
+                                <th style="padding: 1rem; text-align: left; font-weight: 600; color: #555; border-bottom: 2px solid #dee2e6;">Estado</th>
+                                <th style="padding: 1rem; text-align: center; font-weight: 600; color: #555; border-bottom: 2px solid #dee2e6;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #dee2e6; transition: background-color 0.2s ease;">
+                                <td style="padding: 1rem; color: #666;">1</td>
+                                <td style="padding: 1rem; color: #333; font-weight: 500;">
+                                    Juan Carlos Pérez Mendoza
+                                </td>
+                                <td style="padding: 1rem; color: #666;">1312345678</td>
+                                <td style="padding: 1rem; color: #666;">Ingeniería en Sistemas</td>
+                                <td style="padding: 1rem; color: #666;">2022</td>
+                                <td style="padding: 1rem; color: #666;">Tech Solutions S.A.</td>
+                                <td style="padding: 1rem; color: #666;">Desarrollador Full Stack</td>
+                                <td style="padding: 1rem;"><span style="background-color: var(--uleam-verde); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block;">Empleado</span></td>
+                                <td style="padding: 1rem; text-align: center;">
+                                    <button style="background-color: var(--uleam-verde); color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.85rem;">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #dee2e6; transition: background-color 0.2s ease;">
+                                <td style="padding: 1rem; color: #666;">2</td>
+                                <td style="padding: 1rem; color: #333; font-weight: 500;">
+                                    María Fernanda García López
+                                </td>
+                                <td style="padding: 1rem; color: #666;">1323456789</td>
+                                <td style="padding: 1rem; color: #666;">Medicina</td>
+                                <td style="padding: 1rem; color: #666;">2021</td>
+                                <td style="padding: 1rem; color: #666;">Hospital General de Manta</td>
+                                <td style="padding: 1rem; color: #666;">Médico General</td>
+                                <td style="padding: 1rem;"><span style="background-color: var(--uleam-verde); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block;">Empleado</span></td>
+                                <td style="padding: 1rem; text-align: center;">
+                                    <button style="background-color: var(--uleam-verde); color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.85rem;">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #dee2e6; transition: background-color 0.2s ease;">
+                                <td style="padding: 1rem; color: #666;">3</td>
+                                <td style="padding: 1rem; color: #333; font-weight: 500;">
+                                    Carlos Alberto Mendoza Vera
+                                </td>
+                                <td style="padding: 1rem; color: #666;">1334567890</td>
+                                <td style="padding: 1rem; color: #666;">Derecho</td>
+                                <td style="padding: 1rem; color: #666;">2023</td>
+                                <td style="padding: 1rem; color: #666;">-</td>
+                                <td style="padding: 1rem; color: #666;">-</td>
+                                <td style="padding: 1rem;"><span style="background-color: #6c757d; color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block;">Desempleado</span></td>
+                                <td style="padding: 1rem; text-align: center;">
+                                    <button style="background-color: var(--uleam-verde); color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.85rem;">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #dee2e6; transition: background-color 0.2s ease;">
+                                <td style="padding: 1rem; color: #666;">4</td>
+                                <td style="padding: 1rem; color: #333; font-weight: 500;">
+                                    Ana Lucía Rodríguez Muñoz
+                                </td>
+                                <td style="padding: 1rem; color: #666;">1345678901</td>
+                                <td style="padding: 1rem; color: #666;">Contabilidad y Auditoría</td>
+                                <td style="padding: 1rem; color: #666;">2022</td>
+                                <td style="padding: 1rem; color: #666;">Consultora Contable AL</td>
+                                <td style="padding: 1rem; color: #666;">Consultora Independiente</td>
+                                <td style="padding: 1rem;"><span style="background-color: #ffc107; color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block;">Emprendimiento</span></td>
+                                <td style="padding: 1rem; text-align: center;">
+                                    <button style="background-color: var(--uleam-verde); color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.85rem;">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #dee2e6; transition: background-color 0.2s ease;">
+                                <td style="padding: 1rem; color: #666;">5</td>
+                                <td style="padding: 1rem; color: #333; font-weight: 500;">
+                                    Pedro José Zambrano Castro
+                                </td>
+                                <td style="padding: 1rem; color: #666;">1356789012</td>
+                                <td style="padding: 1rem; color: #666;">Ingeniería Civil</td>
+                                <td style="padding: 1rem; color: #666;">2020</td>
+                                <td style="padding: 1rem; color: #666;">Constructora del Pacífico</td>
+                                <td style="padding: 1rem; color: #666;">Ingeniero Residente</td>
+                                <td style="padding: 1rem;"><span style="background-color: var(--uleam-verde); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block;">Empleado</span></td>
+                                <td style="padding: 1rem; text-align: center;">
+                                    <button style="background-color: var(--uleam-verde); color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.85rem;">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #dee2e6; transition: background-color 0.2s ease;">
+                                <td style="padding: 1rem; color: #666;">6</td>
+                                <td style="padding: 1rem; color: #333; font-weight: 500;">
+                                    Laura Patricia Cedeño Bravo
+                                </td>
+                                <td style="padding: 1rem; color: #666;">1367890123</td>
+                                <td style="padding: 1rem; color: #666;">Ingeniería en Sistemas</td>
+                                <td style="padding: 1rem; color: #666;">2021</td>
+                                <td style="padding: 1rem; color: #666;">Universidad de Guayaquil</td>
+                                <td style="padding: 1rem; color: #666;">Estudiante de Maestría</td>
+                                <td style="padding: 1rem;"><span style="background-color: #17a2b8; color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block;">Estudios de Posgrado</span></td>
+                                <td style="padding: 1rem; text-align: center;">
+                                    <button style="background-color: var(--uleam-verde); color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.85rem;">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #dee2e6; transition: background-color 0.2s ease;">
+                                <td style="padding: 1rem; color: #666;">7</td>
+                                <td style="padding: 1rem; color: #333; font-weight: 500;">
+                                    Roberto Carlos Moreira Saltos
+                                </td>
+                                <td style="padding: 1rem; color: #666;">1378901234</td>
+                                <td style="padding: 1rem; color: #666;">Administración de Empresas</td>
+                                <td style="padding: 1rem; color: #666;">2023</td>
+                                <td style="padding: 1rem; color: #666;">Banco del Pacífico</td>
+                                <td style="padding: 1rem; color: #666;">Analista Financiero</td>
+                                <td style="padding: 1rem;"><span style="background-color: var(--uleam-verde); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block;">Empleado</span></td>
+                                <td style="padding: 1rem; text-align: center;">
+                                    <button style="background-color: var(--uleam-verde); color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.85rem;">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div style="background-color: #f8f9fa; padding: 1.5rem; border-top: 1px solid #dee2e6;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <small style="color: #666; font-weight: 500;">Mostrando 1-7 de 1,245 registros</small>
+                    </div>
+                    <nav>
+                        <ul style="display: flex; list-style: none; margin: 0; padding: 0; gap: 0.5rem; align-items: center;">
+                            <li>
+                                <a href="#" style="display: inline-block; padding: 8px 16px; background-color: #e9ecef; color: #6c757d; border-radius: 6px; text-decoration: none; font-weight: 500; cursor: not-allowed;">Anterior</a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-block; padding: 8px 16px; background-color: var(--uleam-verde); color: white; border-radius: 6px; text-decoration: none; font-weight: 600;">1</a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-block; padding: 8px 16px; background-color: white; color: #333; border: 1px solid #dee2e6; border-radius: 6px; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">2</a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-block; padding: 8px 16px; background-color: white; color: #333; border: 1px solid #dee2e6; border-radius: 6px; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">3</a>
+                            </li>
+                            <li style="padding: 8px 12px; color: #666;">...</li>
+                            <li>
+                                <a href="#" style="display: inline-block; padding: 8px 16px; background-color: white; color: #333; border: 1px solid #dee2e6; border-radius: 6px; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">178</a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-block; padding: 8px 16px; background-color: var(--uleam-verde); color: white; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Siguiente</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Detalles -->
+    <div class="modal fade" id="modalDetalles" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background: linear-gradient(90deg, var(--uleam-rojo) 0%, var(--uleam-verde) 100%); color: white;">
+                    <h5 class="modal-title">
+                        <i class="👨‍🎓 me-2"></i>Detalles del Graduado
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                        <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                            <strong>Nombre Completo:</strong>
+                            <p>Juan Carlos Pérez Mendoza</p>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                            <strong>Cédula:</strong>
+                            <p>1312345678</p>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                            <strong>Correo:</strong>
+                            <p>juan.perez@uleam.edu.ec</p>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                            <strong>Teléfono:</strong>
+                            <p>0987654321</p>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                            <strong>Carrera:</strong>
+                            <p>Ingeniería en Sistemas</p>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                            <strong>Año de Graduación:</strong>
+                            <p>2022</p>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                            <strong>Empresa:</strong>
+                            <p>Tech Solutions S.A.</p>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                            <strong>Cargo:</strong>
+                            <p>Desarrollador Full Stack</p>
+                        </div>
+                        <div style="width: 100%; margin-bottom: 12px;">
+                            <strong>Estado Laboral:</strong>
+                            <p><span class="badge badge-empleado">Empleado</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="text-muted mb-0">
+                <i class="🎓 me-2"></i>
+                Universidad Laica Eloy Alfaro de Manabí - Sistema de Seguimiento a Graduados
+            </p>
+            <small style="color: #888;">© 2025 - Todos los derechos reservados</small>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script>
+        // Función de búsqueda en tiempo real (simulada)
+        document.getElementById('searchInput').addEventListener('keyup', function(e) {
+            // Aquí iría la lógica de filtrado en tiempo real
+            console.log('Buscando:', e.target.value);
+        });
+    </script>
+    <script src="js/utils.js"></script>
+    <script src="js/admin-seguimiento.js"></script>
+</body>
+</html>

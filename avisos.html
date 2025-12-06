@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avisos y Oportunidades - ULEAM Graduados</title>
+    
+    <!-- Custom CSS - Sin Bootstrap -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/avisos.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-custom">
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
+            <a href="graduado-dashboard.html" style="color: white; font-weight: 700; text-decoration: none; font-size: 1.2rem;">
+                ULEAM - Graduados
+            </a>
+            <div class="navbar-links" style="display: flex; gap: 2rem; align-items: center;">
+                <a href="graduado-dashboard.html" style="color: white; font-weight: 500; text-decoration: none; transition: opacity 0.3s;">
+                    Inicio
+                </a>
+                <a href="perfil.html" style="color: white; font-weight: 500; text-decoration: none; transition: opacity 0.3s;">
+                    Mi Perfil
+                </a>
+                <a href="avisos.html" style="color: white; font-weight: 600; text-decoration: none; border-bottom: 2px solid white; padding-bottom: 4px;">
+                    Avisos
+                </a>
+                <a href="index.html" style="color: white; font-weight: 500; text-decoration: none; transition: opacity 0.3s;">
+                    Cerrar Sesión
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container-fluid my-5">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
+            <!-- Header -->
+            <div class="page-header fade-in">
+                <div>
+                    <h1 style="color: #333; font-weight: 700; margin-bottom: 0.5rem; font-size: 2rem;">📢 Avisos y Oportunidades</h1>
+                    <p style="color: #666; margin: 0; font-size: 1rem;">Entérate de nuevas oportunidades laborales, ferias de empleo y eventos de interés</p>
+                </div>
+            </div>
+
+            <!-- Panel de Filtros -->
+            <div class="filter-panel fade-in">
+                <div class="filter-grid">
+                    <div class="filter-item">
+                        <label class="filter-label">🔍 Filtrar por Tipo</label>
+                        <select class="filter-input" id="tipoFilter">
+                            <option value="">Todos los tipos</option>
+                            <option value="empleo">Ofertas de Empleo</option>
+                            <option value="feria">Ferias de Empleo</option>
+                            <option value="evento">Eventos y Juntas</option>
+                            <option value="taller">Talleres</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label class="filter-label">🎓 Por Carrera</label>
+                        <select class="filter-input" id="carreraFilter">
+                            <option value="">Todas las carreras</option>
+                            <option value="sistemas">Ingeniería en Sistemas</option>
+                            <option value="administracion">Administración de Empresas</option>
+                            <option value="medicina">Medicina</option>
+                            <option value="derecho">Derecho</option>
+                            <option value="civil">Ingeniería Civil</option>
+                            <option value="enfermeria">Enfermería</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label class="filter-label">📊 Ordenar por</label>
+                        <select class="filter-input" id="ordenFilter">
+                            <option value="reciente">Más Reciente</option>
+                            <option value="proximamente">Próximo a Vencer</option>
+                            <option value="antiguo">Más Antiguo</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label class="filter-label">📍 Ubicación</label>
+                        <select class="filter-input" id="ubicacionFilter">
+                            <option value="">Todas las ubicaciones</option>
+                            <optgroup label="Sede Principal">
+                                <option value="manta">Manta (Sede Principal)</option>
+                            </optgroup>
+                            <optgroup label="Sedes y Extensiones en Manabí">
+                                <option value="chone">Chone</option>
+                                <option value="bahia">Bahía de Caráquez</option>
+                                <option value="pedernales">Pedernales</option>
+                                <option value="carmen">El Carmen</option>
+                                <option value="sucre">Sucre</option>
+                                <option value="pichincha-manabi">Pichincha (Manabí)</option>
+                                <option value="flavio-alfaro">Flavio Alfaro</option>
+                                <option value="tosagua">Tosagua</option>
+                            </optgroup>
+                            <optgroup label="Otras Provincias">
+                                <option value="santo-domingo">Santo Domingo de los Tsáchilas</option>
+                            </optgroup>
+                            <optgroup label="Otros">
+                                <option value="quito">Quito</option>
+                                <option value="guayaquil">Guayaquil</option>
+                                <option value="virtual">Virtual/Remoto</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avisos Grid -->
+            <div class="avisos-grid fade-in">
+                <!-- Aviso 1: Oferta de Empleo -->
+                <div class="aviso-card">
+                    <div class="aviso-header aviso-empleo">
+                        <div class="aviso-type">
+                            <span class="type-icon">💼</span>
+                            <span class="type-text">Oferta de Empleo</span>
+                        </div>
+                        <span class="aviso-date">Hace 2 días</span>
+                    </div>
+                    <div class="aviso-body">
+                        <h3 class="aviso-title">Desarrollador Full Stack - Tech Solutions S.A.</h3>
+                        <p class="aviso-location">📍 Manta, Manabí</p>
+                        <div class="aviso-tags">
+                            <span class="tag tag-blue">Ingeniería en Sistemas</span>
+                            <span class="tag tag-orange">Tiempo Completo</span>
+                        </div>
+                        <p class="aviso-description">
+                            Se busca desarrollador con experiencia en React, Node.js y bases de datos. Excelentes beneficios y ambiente laboral. Interesados enviar CV al correo especificado.
+                        </p>
+                        <div class="aviso-meta">
+                            <span class="meta-item">📅 Vence: 30 de Octubre, 2025</span>
+                        </div>
+                    </div>
+                    <div class="aviso-footer">
+                        <button class="btn-aviso btn-primary">Ver Más Detalles</button>
+                    </div>
+                </div>
+
+                <!-- Aviso 2: Feria de Empleo -->
+                <div class="aviso-card">
+                    <div class="aviso-header aviso-feria">
+                        <div class="aviso-type">
+                            <span class="type-icon">🏢</span>
+                            <span class="type-text">Feria de Empleo</span>
+                        </div>
+                        <span class="aviso-date">Hace 5 días</span>
+                    </div>
+                    <div class="aviso-body">
+                        <h3 class="aviso-title">Feria de Empleo 2025 - ULEAM</h3>
+                        <p class="aviso-location">📍 Campus Principal, Manta</p>
+                        <div class="aviso-tags">
+                            <span class="tag tag-green">Todas las Carreras</span>
+                            <span class="tag tag-blue">Presencial</span>
+                        </div>
+                        <p class="aviso-description">
+                            Participa en nuestra feria de empleo anual donde se presentarán 35 empresas buscando talento. Entrevistas en tiempo real, talleres gratuitos y networking.
+                        </p>
+                        <div class="aviso-meta">
+                            <span class="meta-item">📅 15 de Noviembre, 2025 - 8:00 AM</span>
+                        </div>
+                    </div>
+                    <div class="aviso-footer">
+                        <button class="btn-aviso btn-success">✅ Registrarse</button>
+                    </div>
+                </div>
+
+                <!-- Aviso 3: Evento y Junta -->
+                <div class="aviso-card">
+                    <div class="aviso-header aviso-evento">
+                        <div class="aviso-type">
+                            <span class="type-icon">📋</span>
+                            <span class="type-text">Evento</span>
+                        </div>
+                        <span class="aviso-date">Hace 1 día</span>
+                    </div>
+                    <div class="aviso-body">
+                        <h3 class="aviso-title">Junta de Graduados - Vinculación Laboral</h3>
+                        <p class="aviso-location">📍 Auditorio Central, ULEAM</p>
+                        <div class="aviso-tags">
+                            <span class="tag tag-purple">Graduados 2020-2025</span>
+                            <span class="tag tag-gray">Libre</span>
+                        </div>
+                        <p class="aviso-description">
+                            Se llevará a cabo una junta informativa sobre nuevas estrategias de vinculación laboral entre la ULEAM y el sector empresarial. Importante tu asistencia.
+                        </p>
+                        <div class="aviso-meta">
+                            <span class="meta-item">📅 5 de Noviembre, 2025 - 3:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="aviso-footer">
+                        <button class="btn-aviso btn-danger">✅ Confirmar Asistencia</button>
+                    </div>
+                </div>
+
+                <!-- Aviso 4: Oferta de Empleo -->
+                <div class="aviso-card">
+                    <div class="aviso-header aviso-empleo">
+                        <div class="aviso-type">
+                            <span class="type-icon">💼</span>
+                            <span class="type-text">Oferta de Empleo</span>
+                        </div>
+                        <span class="aviso-date">Hace 7 días</span>
+                    </div>
+                    <div class="aviso-body">
+                        <h3 class="aviso-title">Consultor Administrativo - Deloitte</h3>
+                        <p class="aviso-location">📍 Quito, Pichincha</p>
+                        <div class="aviso-tags">
+                            <span class="tag tag-blue">Administración de Empresas</span>
+                            <span class="tag tag-orange">Tiempo Completo</span>
+                        </div>
+                        <p class="aviso-description">
+                            Buscamos profesionales en administración con experiencia en consultoría. Oportunidad para trabajar con empresas multinacionales. Relocalización disponible.
+                        </p>
+                        <div class="aviso-meta">
+                            <span class="meta-item">📅 Vence: 25 de Octubre, 2025</span>
+                        </div>
+                    </div>
+                    <div class="aviso-footer">
+                        <button class="btn-aviso btn-primary">Ver Más Detalles</button>
+                    </div>
+                </div>
+
+                <!-- Aviso 5: Feria de Empleo Tecnológico -->
+                <div class="aviso-card">
+                    <div class="aviso-header aviso-feria">
+                        <div class="aviso-type">
+                            <span class="type-icon">🏢</span>
+                            <span class="type-text">Feria de Empleo</span>
+                        </div>
+                        <span class="aviso-date">Hace 10 días</span>
+                    </div>
+                    <div class="aviso-body">
+                        <h3 class="aviso-title">Feria de Empleo Tecnológico - TechHub Manabí</h3>
+                        <p class="aviso-location">📍 Centro de Convenciones, Manta</p>
+                        <div class="aviso-tags">
+                            <span class="tag tag-blue">Ingeniería en Sistemas</span>
+                            <span class="tag tag-green">Software</span>
+                        </div>
+                        <p class="aviso-description">
+                            Especializada en empresas de tecnología. Conoce oportunidades en desarrollo, análisis de datos, ciberseguridad y más. Charlas gratuitas de expertos del sector.
+                        </p>
+                        <div class="aviso-meta">
+                            <span class="meta-item">📅 12 de Noviembre, 2025 - 9:00 AM</span>
+                        </div>
+                    </div>
+                    <div class="aviso-footer">
+                        <button class="btn-aviso btn-success">✅ Registrarse</button>
+                    </div>
+                </div>
+
+                <!-- Aviso 6: Taller -->
+                <div class="aviso-card">
+                    <div class="aviso-header aviso-taller">
+                        <div class="aviso-type">
+                            <span class="type-icon">🎓</span>
+                            <span class="type-text">Taller</span>
+                        </div>
+                        <span class="aviso-date">Hace 3 días</span>
+                    </div>
+                    <div class="aviso-body">
+                        <h3 class="aviso-title">Taller: Entrevista Efectiva y Negociación Salarial</h3>
+                        <p class="aviso-location">📍 Sala Virtual (Zoom)</p>
+                        <div class="aviso-tags">
+                            <span class="tag tag-green">Todas las Carreras</span>
+                            <span class="tag tag-gray">Gratuito</span>
+                        </div>
+                        <p class="aviso-description">
+                            Aprende técnicas de entrevista laboral, cómo negociar tu salario y presentarte ante empleadores. Impartido por especialista en recursos humanos.
+                        </p>
+                        <div class="aviso-meta">
+                            <span class="meta-item">📅 8 de Noviembre, 2025 - 6:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="aviso-footer">
+                        <button class="btn-aviso btn-warning">✅ Reservar Cupo</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paginación -->
+            <div class="pagination-container fade-in">
+                <div class="pagination-info">Mostrando 6 de 24 avisos</div>
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>← Anterior</button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">4</button>
+                    <button class="pagination-btn">Siguiente →</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal de Detalles -->
+    <div id="modalDetalles" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6);">
+        <div style="background-color: #fefefe; margin: 5% auto; padding: 0; border-radius: 12px; width: 90%; max-width: 800px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); animation: slideIn 0.3s ease;">
+            <!-- Header del Modal -->
+            <div id="modalHeader" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1.5rem 2rem; border-radius: 12px 12px 0 0; display: flex; justify-content: space-between; align-items: center;">
+                <h2 id="modalTitulo" style="color: white; margin: 0; font-size: 1.5rem; font-weight: 700;"></h2>
+                <button id="closeModal" style="background: rgba(255,255,255,0.2); border: none; color: white; font-size: 1.8rem; cursor: pointer; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">&times;</button>
+            </div>
+            
+            <!-- Contenido del Modal -->
+            <div style="padding: 2rem; max-height: 60vh; overflow-y: auto;">
+                <div id="modalContenido"></div>
+            </div>
+            
+            <!-- Footer del Modal -->
+            <div style="padding: 1.5rem 2rem; border-top: 1px solid #e0e0e0; display: flex; gap: 1rem; justify-content: flex-end;">
+                <button id="btnCerrarModal" style="padding: 0.7rem 1.5rem; background: #6c757d; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.3s;">Cerrar</button>
+                <button id="btnAccionModal" style="padding: 0.7rem 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);">Aplicar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: linear-gradient(90deg, #DC143C 0%, #228B22 100%); color: white; text-align: center; padding: 1.5rem; margin-top: 3rem;">
+        <p style="margin: 0; font-size: 0.9rem;">Universidad Laica Eloy Alfaro de Manabí - Sistema de Seguimiento a Graduados</p>
+        <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem; opacity: 0.9;">© 2025 - Todos los derechos reservados</p>
+    </footer>
+    
+    <style>
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        #closeModal:hover, #btnCerrarModal:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        
+        #btnAccionModal:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/avisos.js"></script>
+    <script>
+        // Efecto hover en enlaces del navbar
+        document.querySelectorAll('.navbar-links a').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.opacity = '0.8';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.opacity = '1';
+            });
+        });
+
+        // Simulación de filtros
+        document.getElementById('tipoFilter').addEventListener('change', function(e) {
+            console.log('Filtrar por tipo:', e.target.value);
+            // Aquí iría la lógica de filtrado
+        });
+
+        document.getElementById('carreraFilter').addEventListener('change', function(e) {
+            console.log('Filtrar por carrera:', e.target.value);
+            // Aquí iría la lógica de filtrado
+        });
+
+        document.getElementById('ordenFilter').addEventListener('change', function(e) {
+            console.log('Ordenar por:', e.target.value);
+            // Aquí iría la lógica de ordenamiento
+        });
+
+        document.getElementById('ubicacionFilter').addEventListener('change', function(e) {
+            console.log('Filtrar por ubicación:', e.target.value);
+            // Aquí iría la lógica de filtrado
+        });
+
+        // Animación de entrada escalonada para las tarjetas
+        const cards = document.querySelectorAll('.aviso-card');
+        cards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            card.classList.add('fade-in');
+        });
+    </script>
+</body>
+</html>

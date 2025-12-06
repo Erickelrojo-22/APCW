@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - ULEAM Graduados</title>
+    
+    <!-- Custom CSS - Sin Bootstrap -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-custom">
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
+            <a href="graduado-dashboard.html" style="color: white; font-weight: 700; text-decoration: none; font-size: 1.2rem;">
+                ULEAM - Graduados
+            </a>
+            <div class="navbar-links" style="display: flex; gap: 2rem; align-items: center;">
+                <a href="graduado-dashboard.html" style="color: white; font-weight: 500; text-decoration: none; transition: opacity 0.3s;">
+                    Inicio
+                </a>
+                <a href="perfil.html" style="color: white; font-weight: 600; text-decoration: none; border-bottom: 2px solid white; padding-bottom: 4px;">
+                    Mi Perfil
+                </a>
+                <a href="avisos.html" style="color: white; font-weight: 500; text-decoration: none; transition: opacity 0.3s;">
+                    Avisos
+                </a>
+                <a href="index.html" style="color: white; font-weight: 500; text-decoration: none; transition: opacity 0.3s;">
+                    Cerrar Sesión
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container-fluid my-5">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            
+            <!-- Encabezado de Perfil -->
+            <div class="profile-header fade-in">
+                <div class="profile-header-bg">
+                    <div class="profile-avatar-container">
+                        <div class="profile-avatar">JP</div>
+                    </div>
+                    <h1 class="profile-name">Juan Carlos Pérez Mendoza</h1>
+                    <p class="profile-career">Ingeniero en Sistemas</p>
+                    <p class="profile-year">Graduado en 2022</p>
+                    <span class="profile-status">✅ Empleado</span>
+                </div>
+                <div class="profile-quick-info">
+                    <div class="quick-info-item">
+                        <span class="quick-info-label">📧 Correo</span>
+                        <span class="quick-info-value">juan.perez@uleam.edu.ec</span>
+                    </div>
+                    <div class="quick-info-item">
+                        <span class="quick-info-label">📱 Teléfono</span>
+                        <span class="quick-info-value">0987654321</span>
+                    </div>
+                    <div class="quick-info-item">
+                        <span class="quick-info-label">📍 Ubicación</span>
+                        <span class="quick-info-value">Manta, Manabí</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secciones de Información -->
+            <div class="info-grid">
+                
+                <!-- Información Personal -->
+                <div class="info-card fade-in">
+                    <div class="info-card-header">
+                        <h2 class="info-card-title">👤 Información Personal</h2>
+                        <button class="btn-edit-section" onclick="toggleEditSection('personal')" id="btnEditPersonal">
+                            ✏️
+                        </button>
+                    </div>
+                    <div class="info-card-body">
+                        <!-- Vista de solo lectura -->
+                        <div id="personalView">
+                            <div class="info-field">
+                                <label class="info-label">Nombres Completos</label>
+                                <p class="info-value">Juan Carlos Pérez Mendoza</p>
+                            </div>
+                            <div class="info-field">
+                                <label class="info-label">Cédula</label>
+                                <p class="info-value">1312345678</p>
+                            </div>
+                            <div class="info-field">
+                                <label class="info-label">Correo Electrónico</label>
+                                <p class="info-value">juan.perez@gmail.com</p>
+                            </div>
+                            <div class="info-field">
+                                <label class="info-label">Teléfono</label>
+                                <p class="info-value">0987654321</p>
+                            </div>
+                            <div class="info-field">
+                                <label class="info-label">Dirección</label>
+                                <p class="info-value">Manta, Manabí, Ecuador</p>
+                            </div>
+                        </div>
+
+                        <!-- Vista de edición -->
+                        <div id="personalEdit" style="display: none;">
+                            <div class="form-group">
+                                <label class="form-label">Nombres Completos</label>
+                                <input type="text" class="form-input" id="inputNombres" value="Juan Carlos Pérez Mendoza">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    Cédula 
+                                    <span class="badge-readonly">🔒 No editable</span>
+                                </label>
+                                <input type="text" class="form-input input-readonly" value="1312345678" readonly>
+                                <small class="form-hint">Este campo no puede ser modificado por seguridad</small>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-input" id="inputCorreo" value="juan.perez@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Teléfono</label>
+                                <input type="tel" class="form-input" id="inputTelefono" value="0987654321">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Dirección</label>
+                                <input type="text" class="form-input" id="inputDireccion" value="Manta, Manabí, Ecuador">
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn-save" onclick="saveSection('personal')">💾 Guardar</button>
+                                <button class="btn-cancel" onclick="cancelEditSection('personal')">❌ Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Información Académica -->
+                <div class="info-card fade-in">
+                    <div class="info-card-header">
+                        <h2 class="info-card-title">🎓 Información Académica</h2>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="info-field">
+                            <label class="info-label">Carrera</label>
+                            <p class="info-value">Ingeniería en Sistemas</p>
+                        </div>
+                        <div class="info-field">
+                            <label class="info-label">Año de Graduación</label>
+                            <p class="info-value">2022</p>
+                        </div>
+                        <div class="info-field">
+                            <label class="info-label">Título Obtenido</label>
+                            <p class="info-value">Ingeniero en Sistemas Informáticos</p>
+                        </div>
+                        <div class="info-field">
+                            <label class="info-label">Facultad</label>
+                            <p class="info-value">Facultad de Ciencias Informáticas</p>
+                        </div>
+                        <div class="info-notice">
+                            <span class="notice-icon">ℹ️</span>
+                            <span class="notice-text">Los datos académicos están verificados por la universidad y no pueden ser modificados</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Información Laboral (Ancho completo) -->
+            <div class="info-card info-card-full fade-in">
+                <div class="info-card-header">
+                    <h2 class="info-card-title">💼 Información Laboral</h2>
+                    <button class="btn-edit-section" onclick="toggleEditSection('laboral')" id="btnEditLaboral">
+                        ✏️
+                    </button>
+                </div>
+                <div class="info-card-body">
+                    <!-- Vista de solo lectura -->
+                    <div id="laboralView">
+                        <div class="info-grid-horizontal">
+                            <div class="info-field">
+                                <label class="info-label">Estado Laboral</label>
+                                <p class="info-value">
+                                    <span class="status-badge status-empleado">💼 Empleado</span>
+                                </p>
+                            </div>
+                            <div class="info-field">
+                                <label class="info-label">Empresa</label>
+                                <p class="info-value">Tech Solutions S.A.</p>
+                            </div>
+                            <div class="info-field">
+                                <label class="info-label">Cargo</label>
+                                <p class="info-value">Desarrollador Full Stack</p>
+                            </div>
+                        </div>
+                        <div class="info-field">
+                            <label class="info-label">Descripción del Trabajo</label>
+                            <p class="info-value">Desarrollo de aplicaciones web y móviles utilizando tecnologías modernas como React, Node.js y bases de datos SQL y NoSQL.</p>
+                        </div>
+                    </div>
+
+                    <!-- Vista de edición -->
+                    <div id="laboralEdit" style="display: none;">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Estado Laboral</label>
+                                <select class="form-input" id="selectEstado">
+                                    <option value="empleado" selected>Empleado</option>
+                                    <option value="desempleado">Desempleado</option>
+                                    <option value="emprendimiento">Emprendimiento</option>
+                                    <option value="posgrado">Estudios de Posgrado</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Empresa</label>
+                                <input type="text" class="form-input" id="inputEmpresa" value="Tech Solutions S.A.">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Cargo</label>
+                                <input type="text" class="form-input" id="inputCargo" value="Desarrollador Full Stack">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Descripción del Trabajo</label>
+                            <textarea class="form-input" id="inputDescripcion" rows="3">Desarrollo de aplicaciones web y móviles utilizando tecnologías modernas como React, Node.js y bases de datos SQL y NoSQL.</textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn-save" onclick="saveSection('laboral')">💾 Guardar Cambios</button>
+                            <button class="btn-cancel" onclick="cancelEditSection('laboral')">❌ Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Historial Laboral -->
+            <div class="info-card info-card-full fade-in">
+                <div class="info-card-header">
+                    <h2 class="info-card-title">📋 Historial Laboral</h2>
+                    <button class="btn-edit-section" onclick="toggleAddExperience()" id="btnAddExperience">
+                        ➕
+                    </button>
+                </div>
+                <div class="info-card-body">
+                    <!-- Formulario para agregar nueva experiencia -->
+                    <div id="addExperienceForm" style="display: none;">
+                        <h3 style="margin-bottom: 1.5rem; color: #333; font-size: 1.1rem;">Agregar Nueva Experiencia</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Empresa</label>
+                                <input type="text" class="form-input" id="newEmpresa" placeholder="Nombre de la empresa">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Cargo</label>
+                                <input type="text" class="form-input" id="newCargo" placeholder="Puesto desempeñado">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Área</label>
+                                <input type="text" class="form-input" id="newArea" placeholder="Ej: Desarrollo, Soporte, Redes">
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Fecha Inicio</label>
+                                <input type="month" class="form-input" id="newFechaInicio">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Fecha Fin</label>
+                                <input type="month" class="form-input" id="newFechaFin">
+                                <span class="form-hint">Dejar vacío si es trabajo actual</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Salario (opcional)</label>
+                                <input type="number" class="form-input" id="newSalario" placeholder="500.00" step="0.01">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Descripción de Funciones</label>
+                            <textarea class="form-input" id="newDescripcion" rows="3" placeholder="Describe tus principales responsabilidades y logros..."></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn-save" onclick="addExperience()">💾 Agregar Experiencia</button>
+                            <button class="btn-cancel" onclick="toggleAddExperience()">❌ Cancelar</button>
+                        </div>
+                    </div>
+
+                    <!-- Lista de experiencias -->
+                    <div id="experiencesList">
+                        <!-- Experiencia 1 (Actual) -->
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-title">
+                                    <h3 class="experience-position">💼 Desarrollador Full Stack</h3>
+                                    <p class="experience-company">Tech Solutions S.A.</p>
+                                </div>
+                                <div class="experience-actions">
+                                    <span class="badge-current">Actual</span>
+                                    <button class="btn-icon-small btn-delete" onclick="deleteExperience(1)" title="Eliminar">🗑️</button>
+                                </div>
+                            </div>
+                            <div class="experience-details">
+                                <div class="experience-meta">
+                                    <span class="meta-item">📅 Enero 2024 - Presente</span>
+                                    <span class="meta-item">⏱️ 10 meses</span>
+                                    <span class="meta-item">🏢 Desarrollo de Software</span>
+                                    <span class="meta-item">💰 $1,200.00</span>
+                                </div>
+                                <p class="experience-description">
+                                    Desarrollo de aplicaciones web y móviles utilizando tecnologías modernas como React, Node.js y bases de datos SQL y NoSQL. Participación en proyectos de transformación digital para clientes del sector financiero y retail.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Experiencia 2 -->
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-title">
+                                    <h3 class="experience-position">💻 Desarrollador Junior</h3>
+                                    <p class="experience-company">Innovatech Cia. Ltda.</p>
+                                </div>
+                                <div class="experience-actions">
+                                    <button class="btn-icon-small btn-delete" onclick="deleteExperience(2)" title="Eliminar">🗑️</button>
+                                </div>
+                            </div>
+                            <div class="experience-details">
+                                <div class="experience-meta">
+                                    <span class="meta-item">📅 Junio 2023 - Diciembre 2023</span>
+                                    <span class="meta-item">⏱️ 7 meses</span>
+                                    <span class="meta-item">🏢 Desarrollo Web</span>
+                                    <span class="meta-item">💰 $800.00</span>
+                                </div>
+                                <p class="experience-description">
+                                    Desarrollo y mantenimiento de sitios web corporativos. Implementación de landing pages y sistemas de gestión de contenido. Trabajo con HTML5, CSS3, JavaScript y WordPress.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Experiencia 3 -->
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-title">
+                                    <h3 class="experience-position">🎓 Pasante de Desarrollo</h3>
+                                    <p class="experience-company">Universidad ULEAM - Departamento de TI</p>
+                                </div>
+                                <div class="experience-actions">
+                                    <button class="btn-icon-small btn-delete" onclick="deleteExperience(3)" title="Eliminar">🗑️</button>
+                                </div>
+                            </div>
+                            <div class="experience-details">
+                                <div class="experience-meta">
+                                    <span class="meta-item">📅 Enero 2023 - Mayo 2023</span>
+                                    <span class="meta-item">⏱️ 5 meses</span>
+                                    <span class="meta-item">🏢 Soporte Técnico</span>
+                                    <span class="meta-item">💰 $400.00</span>
+                                </div>
+                                <p class="experience-description">
+                                    Soporte técnico al personal administrativo y docente. Mantenimiento de equipos informáticos. Desarrollo de pequeñas aplicaciones internas para automatización de procesos administrativos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mensaje si no hay experiencias -->
+                    <div id="noExperiencesMessage" style="display: none;">
+                        <div class="empty-state">
+                            <span style="font-size: 3rem;">📋</span>
+                            <p style="color: #888; margin-top: 1rem;">No hay experiencias laborales registradas</p>
+                            <p style="color: #999; font-size: 0.9rem;">Haz clic en el botón ➕ para agregar tu primera experiencia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: linear-gradient(90deg, #DC143C 0%, #228B22 100%); color: white; text-align: center; padding: 1.5rem; margin-top: 3rem;">
+        <p style="margin: 0; font-size: 0.9rem;">Universidad Laica Eloy Alfaro de Manabí - Sistema de Seguimiento a Graduados</p>
+        <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem; opacity: 0.9;">© 2025 - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/perfil.js"></script>
+    <script>
+        // Efecto hover en enlaces del navbar
+        document.querySelectorAll('.navbar-links a').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.opacity = '0.8';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.opacity = '1';
+            });
+        });
+
+        // Funciones de edición
+        function toggleEditSection(section) {
+            const viewElement = document.getElementById(section + 'View');
+            const editElement = document.getElementById(section + 'Edit');
+            const btnEdit = document.getElementById('btnEdit' + section.charAt(0).toUpperCase() + section.slice(1));
+            
+            viewElement.style.display = 'none';
+            editElement.style.display = 'block';
+            if (btnEdit) btnEdit.style.display = 'none';
+        }
+
+        function cancelEditSection(section) {
+            const viewElement = document.getElementById(section + 'View');
+            const editElement = document.getElementById(section + 'Edit');
+            const btnEdit = document.getElementById('btnEdit' + section.charAt(0).toUpperCase() + section.slice(1));
+            
+            viewElement.style.display = 'block';
+            editElement.style.display = 'none';
+            if (btnEdit) btnEdit.style.display = 'block';
+        }
+
+        function saveSection(section) {
+            // Simulación de guardado
+            alert('✅ Cambios guardados exitosamente!\n\n(Esta es una demostración. En producción, los datos se guardarían en el servidor)');
+            cancelEditSection(section);
+        }
+
+        // Funciones para Historial Laboral
+        function toggleAddExperience() {
+            const form = document.getElementById('addExperienceForm');
+            const btn = document.getElementById('btnAddExperience');
+            
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+                btn.textContent = '❌';
+                // Limpiar formulario
+                document.getElementById('newEmpresa').value = '';
+                document.getElementById('newCargo').value = '';
+                document.getElementById('newArea').value = '';
+                document.getElementById('newFechaInicio').value = '';
+                document.getElementById('newFechaFin').value = '';
+                document.getElementById('newSalario').value = '';
+                document.getElementById('newDescripcion').value = '';
+            } else {
+                form.style.display = 'none';
+                btn.textContent = '➕';
+            }
+        }
+
+        function addExperience() {
+            // Obtener valores del formulario
+            const empresa = document.getElementById('newEmpresa').value;
+            const cargo = document.getElementById('newCargo').value;
+            const area = document.getElementById('newArea').value;
+            const fechaInicio = document.getElementById('newFechaInicio').value;
+            const fechaFin = document.getElementById('newFechaFin').value;
+            const salario = document.getElementById('newSalario').value;
+            const descripcion = document.getElementById('newDescripcion').value;
+
+            // Validar campos requeridos
+            if (!empresa || !cargo || !area || !fechaInicio || !descripcion) {
+                alert('❌ Por favor completa todos los campos obligatorios');
+                return;
+            }
+
+            // Formatear fechas
+            const fechaInicioFormatted = formatMonthYear(fechaInicio);
+            const fechaFinFormatted = fechaFin ? formatMonthYear(fechaFin) : 'Presente';
+            const duracion = calculateDuration(fechaInicio, fechaFin);
+            const isCurrent = !fechaFin;
+
+            // Crear nuevo elemento de experiencia
+            const newExperience = document.createElement('div');
+            newExperience.className = 'experience-item fade-in';
+            newExperience.innerHTML = `
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <h3 class="experience-position">💼 ${cargo}</h3>
+                        <p class="experience-company">${empresa}</p>
+                    </div>
+                    <div class="experience-actions">
+                        ${isCurrent ? '<span class="badge-current">Actual</span>' : ''}
+                        <button class="btn-icon-small btn-delete" onclick="deleteExperience(this)" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+                <div class="experience-details">
+                    <div class="experience-meta">
+                        <span class="meta-item">📅 ${fechaInicioFormatted} - ${fechaFinFormatted}</span>
+                        <span class="meta-item">⏱️ ${duracion}</span>
+                        <span class="meta-item">🏢 ${area}</span>
+                        ${salario ? `<span class="meta-item">💰 $${parseFloat(salario).toFixed(2)}</span>` : ''}
+                    </div>
+                    <p class="experience-description">${descripcion}</p>
+                </div>
+            `;
+
+            // Agregar al inicio de la lista
+            const experiencesList = document.getElementById('experiencesList');
+            experiencesList.insertBefore(newExperience, experiencesList.firstChild);
+
+            // Ocultar mensaje vacío
+            document.getElementById('noExperiencesMessage').style.display = 'none';
+
+            // Cerrar formulario
+            toggleAddExperience();
+
+            // Mensaje de éxito
+            alert('✅ Experiencia agregada exitosamente!\n\n(Esta es una demostración. En producción, los datos se guardarían en el servidor)');
+        }
+
+        function deleteExperience(element) {
+            if (confirm('⚠️ ¿Estás seguro de que deseas eliminar esta experiencia?\n\nEsta acción no se puede deshacer.')) {
+                // Si element es un número (llamada antigua), buscar por índice
+                if (typeof element === 'number') {
+                    const items = document.querySelectorAll('.experience-item');
+                    if (items[element - 1]) {
+                        items[element - 1].remove();
+                    }
+                } else {
+                    // Si element es un botón, eliminar el padre .experience-item
+                    element.closest('.experience-item').remove();
+                }
+
+                // Verificar si quedan experiencias
+                const experiencesList = document.getElementById('experiencesList');
+                if (experiencesList.children.length === 0) {
+                    document.getElementById('noExperiencesMessage').style.display = 'block';
+                }
+
+                alert('✅ Experiencia eliminada exitosamente');
+            }
+        }
+
+        function formatMonthYear(dateString) {
+            const [year, month] = dateString.split('-');
+            const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 
+                          'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+            return `${months[parseInt(month) - 1]} ${year}`;
+        }
+
+        function calculateDuration(startDate, endDate) {
+            const start = new Date(startDate + '-01');
+            const end = endDate ? new Date(endDate + '-01') : new Date();
+            
+            let months = (end.getFullYear() - start.getFullYear()) * 12;
+            months -= start.getMonth();
+            months += end.getMonth();
+            
+            if (months < 1) return '< 1 mes';
+            if (months === 1) return '1 mes';
+            if (months < 12) return `${months} meses`;
+            
+            const years = Math.floor(months / 12);
+            const remainingMonths = months % 12;
+            
+            if (remainingMonths === 0) {
+                return years === 1 ? '1 año' : `${years} años`;
+            }
+            
+            return `${years} año${years > 1 ? 's' : ''} ${remainingMonths} mes${remainingMonths > 1 ? 'es' : ''}`;
+        }
+
+        // Animación de entrada escalonada
+        const cards = document.querySelectorAll('.fade-in');
+        cards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+    </script>
+</body>
+</html>

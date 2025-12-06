@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña - ULEAM</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/recuperar-contrasena.css">
+</head>
+<body>
+    <div class="recovery-container">
+        <div class="recovery-card fade-in">
+            
+            <!-- Logo y Header -->
+            <div class="recovery-header">
+                <div class="logo-circle">
+                    <img src="assets/logo-uleam.png" alt="ULEAM Logo" onerror="this.parentElement.innerHTML='<div style=\'color:#DC143C;font-size:2.5rem;font-weight:700;\'>ULEAM</div>'">
+                </div>
+                <h1 class="recovery-title">Recuperar Contraseña</h1>
+                <p class="recovery-subtitle">Sistema de Seguimiento a Graduados</p>
+                <p class="recovery-university">Universidad Laica Eloy Alfaro de Manabí</p>
+            </div>
+
+            <!-- Información -->
+            <div class="info-box">
+                <div class="info-icon">📧</div>
+                <div class="info-content">
+                    <p class="info-text">Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.</p>
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <form id="recoveryForm" class="recovery-form">
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="label-icon">📧</span>
+                        Correo Electrónico
+                    </label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            class="form-input"
+                            placeholder="tu_correo@ejemplo.com"
+                            required>
+                        <span class="input-icon">✉️</span>
+                    </div>
+                    <span class="form-hint">Usa el correo electrónico con el que te registraste</span>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <span class="btn-icon">✈️</span>
+                    <span class="btn-text">Enviar Enlace de Recuperación</span>
+                </button>
+
+                <div class="form-footer">
+                    <a href="login.html" class="back-link">
+                        <span class="back-icon">←</span>
+                        Volver al Inicio de Sesión
+                    </a>
+                </div>
+            </form>
+
+            <!-- Información Adicional -->
+            <div class="help-section">
+                <h3 class="help-title">¿Necesitas ayuda?</h3>
+                <div class="help-grid">
+                    <div class="help-item">
+                        <div class="help-icon">📝</div>
+                        <p class="help-text">Si no recuerdas tu correo, contacta al administrador</p>
+                    </div>
+                    <div class="help-item">
+                        <div class="help-icon">⏰</div>
+                        <p class="help-text">El enlace expirará en 1 hora por seguridad</p>
+                    </div>
+                    <div class="help-item">
+                        <div class="help-icon">📬</div>
+                        <p class="help-text">Revisa tu carpeta de spam si no recibes el correo</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <p class="footer-text">Universidad Laica Eloy Alfaro de Manabí - Sistema de Seguimiento a Graduados</p>
+        <p class="footer-copyright">© 2025 - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/recuperar-contrasena.js"></script>
+    <script>
+        document.getElementById('recoveryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const emailInput = document.getElementById('email');
+            
+            // Validar formato de email
+            if (!email.includes('@')) {
+                alert('❌ Por favor ingresa un correo electrónico válido');
+                emailInput.focus();
+                return;
+            }
+            
+            // Deshabilitar botón
+            const submitBtn = this.querySelector('.btn-submit');
+            const originalContent = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="btn-icon">⏳</span><span class="btn-text">Enviando...</span>';
+            
+            // Simular envío
+            setTimeout(() => {
+                // Mostrar mensaje de éxito
+                const infoBox = document.querySelector('.info-box');
+                infoBox.style.background = '#d4edda';
+                infoBox.style.borderColor = '#c3e6cb';
+                infoBox.innerHTML = `
+                    <div class="info-icon">✅</div>
+                    <div class="info-content">
+                        <p class="info-text" style="color: #155724; font-weight: 600;">
+                            ¡Correo enviado exitosamente!<br>
+                            <small style="font-weight: 400;">Revisa tu bandeja de entrada en: <strong>${email}</strong></small>
+                        </p>
+                    </div>
+                `;
+                
+                // Mensaje en consola
+                console.log(`📧 Enlace de recuperación enviado a: ${email}`);
+                
+                // Restaurar botón
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalContent;
+                
+                // Limpiar formulario
+                emailInput.value = '';
+                
+                // Mostrar alert
+                alert(`✅ Se ha enviado un enlace de recuperación a:\n${email}\n\n(Función de demostración)\n\nEn un sistema real, recibirías un correo con instrucciones para restablecer tu contraseña.`);
+                
+                // Opcional: redirigir después de 5 segundos
+                // setTimeout(() => { window.location.href = 'login.html'; }, 5000);
+            }, 1500);
+        });
+
+        // Animación de entrada
+        window.addEventListener('load', function() {
+            document.querySelector('.recovery-card').style.animationDelay = '0.1s';
+        });
+
+        // Efecto focus en input
+        const emailInput = document.getElementById('email');
+        emailInput.addEventListener('focus', function() {
+            this.parentElement.style.borderColor = '#DC143C';
+            this.parentElement.style.boxShadow = '0 0 0 3px rgba(220, 20, 60, 0.1)';
+        });
+        
+        emailInput.addEventListener('blur', function() {
+            this.parentElement.style.borderColor = '#ddd';
+            this.parentElement.style.boxShadow = 'none';
+        });
+    </script>
+</body>
+</html>

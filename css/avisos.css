@@ -1,0 +1,591 @@
+/* CSS ESPECÍFICO - avisos.html */
+
+/* Header de Página */
+.page-header {
+    margin-bottom: 2rem;
+    padding: 1.5rem 0;
+}
+
+/* Panel de Filtros */
+.filter-panel {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.filter-input {
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.filter-input:focus {
+    border-color: #DC143C;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+}
+
+.filter-input:hover {
+    border-color: #bbb;
+}
+
+/* Grid de Avisos */
+.avisos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Tarjeta de Aviso */
+.aviso-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.aviso-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* Header del Aviso */
+.aviso-header {
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.aviso-empleo {
+    background: linear-gradient(135deg, #228B22 0%, #1a6b1a 100%);
+}
+
+.aviso-feria {
+    background: linear-gradient(135deg, #2196F3 0%, #1976d2 100%);
+}
+
+.aviso-evento {
+    background: linear-gradient(135deg, #DC143C 0%, #B71C1C 100%);
+}
+
+.aviso-taller {
+    background: linear-gradient(135deg, #FF9800 0%, #f57c00 100%);
+}
+
+.aviso-type {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.type-icon {
+    font-size: 1.5rem;
+}
+
+.type-text {
+    font-size: 0.95rem;
+}
+
+.aviso-date {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Cuerpo del Aviso */
+.aviso-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.aviso-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.aviso-location {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.aviso-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tag-blue {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.tag-green {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.tag-orange {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.tag-purple {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.tag-gray {
+    background: #f5f5f5;
+    color: #616161;
+}
+
+.aviso-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.aviso-meta {
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+    margin-top: auto;
+}
+
+.meta-item {
+    color: #888;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Footer del Aviso */
+.aviso-footer {
+    padding: 1rem 1.5rem;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.btn-aviso {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #228B22;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1a6b1a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(34, 139, 34, 0.3);
+}
+
+.btn-success {
+    background: #2196F3;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #1976d2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.btn-danger {
+    background: #DC143C;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #B71C1C;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+}
+
+.btn-warning {
+    background: #FF9800;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: #f57c00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+}
+
+/* Paginación */
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.pagination-info {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.pagination {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: #DC143C;
+    color: white;
+    border-color: #DC143C;
+}
+
+.pagination-btn.active {
+    background-color: #DC143C;
+    color: white;
+    border-color: #DC143C;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Animaciones */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== ESTILOS PARA AVISOS DINÁMICOS ========== */
+
+/* Avisos creados dinámicamente desde el panel administrativo */
+.aviso-dinamico {
+    animation: slideInFromTop 0.5s ease;
+}
+
+/* Destacar avisos según prioridad */
+.prioridad-alta {
+    border-left: 4px solid #ff9800;
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
+}
+
+.prioridad-urgente {
+    border-left: 4px solid #DC143C;
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+    animation: pulseUrgent 2s infinite;
+}
+
+/* Badges de prioridad */
+.badge-urgente, .badge-alta {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.badge-urgente {
+    background: linear-gradient(90deg, #DC143C 0%, #ff4444 100%);
+    color: white;
+}
+
+.badge-alta {
+    background: linear-gradient(90deg, #ff9800 0%, #ffc107 100%);
+    color: white;
+}
+
+/* Estilo para autor del aviso */
+.aviso-autor {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* Clase para avisos generales */
+.aviso-general {
+    background: linear-gradient(135deg, #9c27b0 0%, #ba68c8 100%);
+}
+
+/* Animación de entrada desde arriba */
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de pulso para avisos urgentes */
+@keyframes pulseUrgent {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(220, 20, 60, 0.5);
+    }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .avisos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .filter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar-links {
+        gap: 1rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-panel {
+        padding: 1.5rem;
+    }
+
+    .avisos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .page-header p {
+        font-size: 0.9rem !important;
+    }
+
+    .navbar-links {
+        gap: 0.75rem !important;
+        font-size: 0.9rem;
+    }
+
+    .pagination-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pagination {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-links {
+        display: none !important;
+    }
+
+    .navbar-custom > div {
+        padding: 0 1rem !important;
+    }
+
+    .page-header h1 {
+        font-size: 1.25rem !important;
+    }
+
+    .page-header p {
+        font-size: 0.85rem !important;
+    }
+
+    .aviso-card {
+        border-radius: 8px;
+    }
+
+    .aviso-header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+    }
+
+    .aviso-type {
+        width: 100%;
+    }
+
+    .aviso-date {
+        align-self: flex-end;
+    }
+
+    .aviso-body {
+        padding: 1.25rem;
+    }
+
+    .aviso-title {
+        font-size: 1rem;
+    }
+
+    .aviso-footer {
+        padding: 1rem 1.25rem;
+    }
+
+    .btn-aviso {
+        padding: 0.65rem;
+        font-size: 0.9rem;
+    }
+
+    .pagination-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Mejoras visuales adicionales */
+.filter-input::placeholder {
+    color: #999;
+}
+
+/* Estado vacío */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.empty-state-icon {
+    font-size: 4rem;
+    opacity: 0.3;
+    margin-bottom: 1rem;
+}
+
+.empty-state-text {
+    color: #666;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Links del navbar */
+.navbar-links a {
+    position: relative;
+}
+
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Efecto de carga */
+.aviso-card {
+    will-change: transform;
+}
+
+/* Hover en tags */
+.tag {
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    transform: scale(1.05);
+}

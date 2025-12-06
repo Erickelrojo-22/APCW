@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - ULEAM Graduados</title>
+    
+    <!-- Custom CSS - Sin Bootstrap -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--uleam-rojo) 0%, var(--uleam-verde) 100%);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-container::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+
+        .login-container::after {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+            bottom: -80px;
+            left: -80px;
+        }
+        
+        .login-card {
+            background: white;
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+            max-width: 450px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo-container {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        
+        .logo-placeholder {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--uleam-rojo) 0%, var(--uleam-verde) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 15px;
+            border-radius: 50%;
+        }
+        
+        .btn-uleam-rojo {
+            background: linear-gradient(135deg, var(--uleam-rojo) 0%, #b71c1c 100%);
+            color: white;
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 16px;
+            box-shadow: 0 6px 20px rgba(220, 20, 60, 0.3);
+        }
+
+        .btn-uleam-rojo:hover {
+            box-shadow: 0 8px 30px rgba(220, 20, 60, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .btn-uleam-verde {
+            background: linear-gradient(135deg, var(--uleam-verde) 0%, #1a6b1a 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(34, 139, 34, 0.3);
+        }
+
+        .btn-uleam-verde:hover {
+            box-shadow: 0 8px 30px rgba(34, 139, 34, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--uleam-oscuro);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .form-group input {
+            border: 2px solid #e0e0e0;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            border-color: var(--uleam-rojo);
+            box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        
+        hr {
+            margin: 25px 0;
+            border: none;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .link-section {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .link-section a {
+            color: var(--uleam-rojo);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .link-section a:hover {
+            color: var(--uleam-verde);
+            text-decoration: underline;
+        }
+
+        .register-link {
+            background: var(--uleam-gris-claro);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .register-link p {
+            margin: 0 0 10px 0;
+            color: var(--uleam-gris);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card fade-in">
+            <!-- Logo ULEAM -->
+            <div class="logo-container">
+                <div class="logo-placeholder">
+                    <img src="assets/logo-uleam.png" alt="Logo ULEAM">
+                </div>
+                <h3 style="text-align: center; font-weight: bold; margin-bottom: 8px; margin-top: 20px;">Sistema de Seguimiento</h3>
+                <p style="text-align: center; color: var(--uleam-gris);">a Graduados</p>
+            </div>
+
+            <!-- Formulario de Login -->
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">
+                        📧 Correo Electrónico o Usuario
+                    </label>
+                    <div class="icon-input">
+                        <i></i>
+                        <input 
+                            type="text" 
+                            id="email" 
+                            placeholder="tu_correo@ejemplo.com"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">
+                        🔒 Contraseña
+                    </label>
+                    <div class="icon-input">
+                        <i></i>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            placeholder="••••••••"
+                            required>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: flex; align-items: center; margin-bottom: 0; cursor: pointer;">
+                        <input type="checkbox" id="remember" style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
+                        Recordar sesión
+                    </label>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <button type="submit" class="btn btn-uleam-rojo">
+                        ➜ Iniciar Sesión
+                    </button>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="recuperar-contrasena.html" style="text-decoration: none; color: var(--uleam-gris); font-size: 14px;">
+                        ❓ ¿Olvidaste tu contraseña?
+                    </a>
+                </div>
+
+                <hr>
+
+                <div style="text-align: center;">
+                    <p style="margin-bottom: 10px;">¿No tienes cuenta?</p>
+                    <a href="registro.html" class="btn btn-uleam-verde">
+                        ➜ Regístrate aquí
+                    </a>
+                </div>
+            </form>
+
+            <!-- Footer -->
+            <div style="text-align: center; margin-top: 30px;">
+                <small style="color: var(--uleam-gris);">
+                    Universidad Laica Eloy Alfaro de Manabí<br>
+                    © 2025 - Todos los derechos reservados
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

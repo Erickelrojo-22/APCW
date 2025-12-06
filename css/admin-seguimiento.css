@@ -1,0 +1,325 @@
+/* CSS ESPECÍFICO - admin-seguimiento.html */
+
+.seguimiento-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.seguimiento-header {
+    background: linear-gradient(135deg, var(--uleam-rojo) 0%, var(--uleam-verde) 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-lg);
+}
+
+.seguimiento-header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.seguimiento-header p {
+    font-size: 16px;
+    opacity: 0.95;
+}
+
+.seguimiento-toolbar {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.search-box input:focus {
+    border-color: var(--uleam-rojo);
+    box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+}
+
+.filter-group {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-select:focus {
+    border-color: var(--uleam-rojo);
+}
+
+.export-btn {
+    padding: 10px 20px;
+    background: var(--uleam-verde);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.export-btn:hover {
+    background: #1a6b1a;
+    transform: translateY(-2px);
+}
+
+.table-wrapper {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.tracking-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tracking-table thead {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+}
+
+.tracking-table th {
+    padding: 16px;
+    text-align: left;
+    font-weight: 700;
+    color: var(--uleam-oscuro);
+    font-size: 14px;
+    border-bottom: 3px solid #ddd;
+}
+
+.tracking-table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: var(--transition);
+}
+
+.tracking-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+.tracking-table td {
+    padding: 16px;
+    font-size: 14px;
+    color: var(--uleam-oscuro);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-pendiente {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-revisando {
+    background: #cfe2ff;
+    color: #084298;
+}
+
+.status-aprobado {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.status-rechazado {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--uleam-rojo) 0%, var(--uleam-verde) 100%);
+    transition: width 0.3s ease;
+}
+
+.tracking-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-icon {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    font-size: 16px;
+}
+
+.action-view {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.action-view:hover {
+    background: #1976d2;
+    color: white;
+}
+
+.action-edit {
+    background: #fef3c7;
+    color: #f59e0b;
+}
+
+.action-edit:hover {
+    background: #f59e0b;
+    color: white;
+}
+
+.action-delete {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.action-delete:hover {
+    background: #dc2626;
+    color: white;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+.pagination button,
+.pagination span {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.pagination button:hover {
+    background: var(--uleam-rojo);
+    color: white;
+    border-color: var(--uleam-rojo);
+}
+
+.pagination .active {
+    background: var(--uleam-rojo);
+    color: white;
+    border-color: var(--uleam-rojo);
+}
+
+.pagination span {
+    cursor: default;
+}
+
+.modal-seguimiento {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-seguimiento.active {
+    display: flex;
+}
+
+.modal-content-seguimiento {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: var(--shadow-lg);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .seguimiento-toolbar {
+        flex-direction: column;
+    }
+    
+    .search-box {
+        width: 100%;
+    }
+    
+    .filter-group {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .tracking-table {
+        font-size: 12px;
+    }
+    
+    .tracking-table th,
+    .tracking-table td {
+        padding: 10px;
+    }
+    
+    .tracking-actions {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,727 @@
+/* CSS ESPECÍFICO - graduado-dashboard.html */
+
+/* Navbar Custom */
+.navbar-custom {
+    background: linear-gradient(90deg, #DC143C 0%, #228B22 100%);
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.navbar-links a {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-links a:hover {
+    opacity: 0.8;
+}
+
+/* Container Principal */
+.main-container {
+    min-height: calc(100vh - 70px);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 2rem 1rem;
+}
+
+.content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Header de Bienvenida */
+.welcome-header {
+    background: linear-gradient(135deg, #DC143C 0%, #228B22 100%);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    overflow: hidden;
+    position: relative;
+}
+
+.welcome-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.welcome-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-avatar {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    flex-shrink: 0;
+}
+
+.avatar-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #DC143C;
+}
+
+.welcome-info {
+    color: white;
+}
+
+.welcome-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.welcome-subtitle {
+    font-size: 1.1rem;
+    margin: 0.25rem 0;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.welcome-university {
+    font-size: 1rem;
+    margin: 0.25rem 0;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Grid de Acceso Rápido */
+.quick-access-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Tarjetas de Acceso */
+.access-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.access-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 0.75rem 0;
+}
+
+.card-description {
+    color: #666;
+    line-height: 1.6;
+    margin: 0 0 1.25rem 0;
+    font-size: 0.95rem;
+}
+
+/* Botones de las Tarjetas */
+.card-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.btn-card-primary {
+    background: linear-gradient(135deg, #DC143C 0%, #B71C1C 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.btn-card-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+}
+
+.btn-card-secondary {
+    background: white;
+    color: #DC143C;
+    border: 2px solid #DC143C;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.btn-card-secondary:hover {
+    background: #DC143C;
+    color: white;
+}
+
+/* Información Académica/Laboral */
+.academic-info {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #888;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.info-value {
+    color: #333;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Status Badge */
+.status-badge-container {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status-empleado {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 2px solid #2e7d32;
+}
+
+/* Notificaciones Preview */
+.notifications-preview {
+    background: #fff3e0;
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid #FF9800;
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+}
+
+.notification-dot {
+    width: 8px;
+    height: 8px;
+    background: #FF9800;
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+
+.notification-text {
+    font-size: 0.9rem;
+    color: #f57c00;
+    font-weight: 600;
+}
+
+/* Sección de Estadísticas */
+.stats-section {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 1.5rem 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #DC143C;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 600;
+}
+
+/* Acciones Rápidas */
+.quick-actions-section {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.action-button {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.action-button:hover {
+    background: linear-gradient(135deg, #DC143C 0%, #228B22 100%);
+    border-color: transparent;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.action-button:hover .action-icon,
+.action-button:hover .action-text {
+    color: white;
+}
+
+.action-icon {
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.action-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Eventos */
+.events-section {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.event-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    border-left: 4px solid #228B22;
+}
+
+.event-card:hover {
+    background: white;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transform: translateX(5px);
+}
+
+.event-date {
+    background: linear-gradient(135deg, #DC143C 0%, #B71C1C 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.event-day {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.event-month {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+
+.event-info {
+    flex: 1;
+}
+
+.event-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 0.5rem 0;
+}
+
+.event-description {
+    color: #666;
+    margin: 0 0 0.75rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.event-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.event-time,
+.event-location {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 600;
+}
+
+.btn-event {
+    background: #228B22;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.btn-event:hover {
+    background: #1a6b1a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(34, 139, 34, 0.3);
+}
+
+/* Recursos */
+.resources-section {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.resource-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    background: white;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.resource-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.resource-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 0.5rem 0;
+}
+
+.resource-description {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
+}
+
+.resource-link {
+    color: #DC143C;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.resource-link:hover {
+    color: #228B22;
+}
+
+/* Animaciones */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .quick-access-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .welcome-header {
+        padding: 2rem 1.5rem;
+    }
+
+    .welcome-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .welcome-title {
+        font-size: 1.5rem;
+    }
+
+    .welcome-subtitle {
+        font-size: 1rem;
+    }
+
+    .quick-access-grid {
+        gap: 1.5rem;
+    }
+
+    .access-card {
+        padding: 1.5rem;
+    }
+
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .actions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card {
+        flex-direction: column;
+    }
+
+    .event-date {
+        align-self: flex-start;
+    }
+
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar-links {
+        gap: 1rem !important;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-links {
+        display: none !important;
+    }
+
+    .welcome-header {
+        padding: 1.5rem 1rem;
+    }
+
+    .welcome-avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .avatar-text {
+        font-size: 2rem;
+    }
+
+    .welcome-title {
+        font-size: 1.25rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+
+    .welcome-subtitle,
+    .welcome-university {
+        font-size: 0.9rem;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+
+    .access-card {
+        padding: 1.25rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.25rem;
+    }
+
+    .stat-value {
+        font-size: 1.75rem;
+    }
+
+    .event-date {
+        min-width: 70px;
+        padding: 0.75rem;
+    }
+
+    .event-day {
+        font-size: 1.75rem;
+    }
+
+    .resource-icon {
+        font-size: 2.5rem;
+    }
+}

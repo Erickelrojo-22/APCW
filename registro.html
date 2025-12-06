@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Graduado - ULEAM</title>
+    
+    <!-- Custom CSS - Sin Bootstrap -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/registro.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-custom">
+        <div style="max-width: 1200px; margin: 0 auto; width: 100%; padding: 0 20px; display: flex; justify-content: space-between; align-items: center;">
+            <a class="navbar-brand" href="index.html" style="font-size: 20px; font-weight: bold; text-decoration: none; color: white;">
+                ULEAM - Graduados
+            </a>
+            <ul style="list-style: none; display: flex; gap: 20px; margin: 0; padding: 0;">
+                <li>
+                    <a href="index.html" style="text-decoration: none; color: white; font-weight: 500;">
+                        Volver
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden; animation: fadeIn 0.5s;">
+                <div style="padding: 40px;">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <h2 style="font-weight: bold; margin: 0 0 10px 0; color: black;">Registro de Graduado</h2>
+                        <p style="color: #888; margin: 0;">Completa el formulario con tus datos académicos y profesionales</p>
+                    </div>
+
+                    <form id="registroForm">
+                        <!-- Información Personal -->
+                        <div style="margin-bottom: 20px;">
+                            <h5 style="border-bottom: 2px solid #ddd; padding-bottom: 8px; margin-bottom: 15px; color: black;">
+                                Información Personal
+                                </h5>
+                                <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                                    <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                                        <label for="nombres" style="display: block; margin-bottom: 6px; font-weight: 500;">
+                                            <span style="color: red;">*</span> Nombres
+                                        </label>
+                                        <input type="text" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" id="nombres" placeholder="Ingrese sus nombres" required>
+                                    </div>
+                                    <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                                        <label for="apellidos" style="display: block; margin-bottom: 6px; font-weight: 500;">
+                                            <span style="color: red;">*</span> Apellidos
+                                        </label>
+                                        <input type="text" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" id="apellidos" placeholder="Ingrese sus apellidos" required>
+                                    </div>
+                                    <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                                        <label for="cedula" style="display: block; margin-bottom: 6px; font-weight: 500;">
+                                            <span style="color: red;">*</span> Cédula de Identidad
+                                        </label>
+                                        <input type="text" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" id="cedula" placeholder="0000000000" maxlength="10" required>
+                                    </div>
+                                    <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                                        <label for="email" style="display: block; margin-bottom: 6px; font-weight: 500;">
+                                            <span style="color: red;">*</span> Correo Electrónico
+                                        </label>
+                                        <input type="email" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" id="email" placeholder="tu_correo@ejemplo.com" required>
+                                        <small style="color: #888;">Usa tu correo personal, no el institucional</small>
+                                    </div>
+                                    <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                                        <label for="telefono" style="display: block; margin-bottom: 6px; font-weight: 500;">
+                                            <span style="color: red;">*</span> Teléfono
+                                        </label>
+                                        <input type="tel" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" id="telefono" placeholder="0999999999" required>
+                                    </div>
+                                    <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                                        <label for="direccion" style="display: block; margin-bottom: 6px; font-weight: 500;">
+                                            <span style="color: red;">*</span> Dirección
+                                        </label>
+                                        <input type="text" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" id="direccion" placeholder="Ciudad, provincia" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Información Académica -->
+                            <div style="margin-bottom: 20px;">
+                                <h5 style="border-bottom: 2px solid #ddd; padding-bottom: 8px; margin-bottom: 15px; color: black;">
+                                    Información Académica
+                                </h5>
+                                <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                                    <div style="flex: 2; min-width: 300px; margin-bottom: 12px;">
+                                        <label for="carrera" style="display: block; margin-bottom: 6px; font-weight: 500;">
+                                            <span style="color: red;">*</span> Carrera
+                                        </label>
+                                        <select style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" id="carrera" required>
+                                            <option value="" selected disabled>Seleccione su carrera</option>
+                                            <optgroup label="Facultad Ciencias de la Salud">
+                                                <option value="medicina">Medicina</option>
+                                                <option value="odontologia">Odontología</option>
+                                                <option value="enfermeria">Enfermería</option>
+                                                <option value="fisioterapia">Fisioterapia</option>
+                                                <option value="fonoaudiologia">Fonoaudiología</option>
+                                                <option value="laboratorio-clinico">Laboratorio Clínico</option>
+                                                <option value="terapia-ocupacional">Terapia Ocupacional</option>
+                                                <option value="psicologia">Psicología</option>
+                                                <option value="nutricion">Nutrición y Dietética</option>
+                                            </optgroup>
+                                            <optgroup label="Facultad Ciencias Administrativas, Contables y Comercio">
+                                                <option value="administracion-empresas">Administración de Empresas</option>
+                                                <option value="mercadotecnia">Mercadotecnia</option>
+                                                <option value="contabilidad-auditoria">Contabilidad y Auditoría</option>
+                                                <option value="auditoria-control">Auditoría y Control de Gestión</option>
+                                                <option value="finanzas">Finanzas</option>
+                                                <option value="comercio-exterior">Comercio Exterior</option>
+                                                <option value="gestion-informacion">Gestión de la Información Gerencial</option>
+                                                <option value="talento-humano">Gestión del Talento Humano</option>
+                                            </optgroup>
+                                            <optgroup label="Facultad de Educación Turismo Artes y Humanidades">
+                                                <option value="educacion-inicial">Educación Inicial</option>
+                                                <option value="educacion-especial">Educación Especial</option>
+                                                <option value="psicologia-educativa">Psicología Educativa</option>
+                                                <option value="educacion-basica">Educación Básica</option>
+                                                <option value="actividad-fisica">Pedagogía de la Actividad Física y el Deporte</option>
+                                                <option value="lengua-literatura">Pedagogía de la Lengua y la Literatura</option>
+                                                <option value="idiomas">Pedagogía de los Idiomas Nacionales y Extranjeros</option>
+                                                <option value="turismo">Turismo</option>
+                                                <option value="hospitalidad-hoteleria">Hospitalidad y Hotelería</option>
+                                                <option value="artes-plasticas">Artes Plásticas</option>
+                                                <option value="sociologia">Sociología</option>
+                                                <option value="artes-escenicas">Artes Escénicas</option>
+                                                <option value="educacion-bilingue">Educación Básica Bilingüe</option>
+                                                <option value="arqueologia">Arqueología</option>
+                                                <option value="diseno-textil">Diseño Textil e Indumentaria</option>
+                                                <option value="educacion-inicial-bilingue">Educación Inicial Bilingüe</option>
+                                                <option value="entrenamiento-deportivo">Entrenamiento Deportivo</option>
+                                                <option value="gestion-hotelera">Gestión Hotelera Internacional</option>
+                                                <option value="educacion-inclusiva">Educación Inclusiva</option>
+                                            </optgroup>
+                                            <optgroup label="Facultad Ingeniería, Industria y Arquitectura">
+                                                <option value="ingenieria-civil">Ingeniería Civil</option>
+                                                <option value="ingenieria-maritima">Ingeniería Marítima</option>
+                                                <option value="electricidad">Electricidad</option>
+                                                <option value="arquitectura">Arquitectura</option>
+                                                <option value="ingenieria-industrial">Ingeniería Industrial</option>
+                                            </optgroup>
+                                            <optgroup label="Facultad Ciencias de la Vida y Tecnologías">
+                                                <option value="ingenieria-agropecuaria">Ingeniería Agropecuaria</option>
+                                                <option value="agronegocios">Agronegocios</option>
+                                                <option value="ingenieria-agroindustrial">Ingeniería Agroindustrial</option>
+                                                <option value="ingenieria-ambiental">Ingeniería Ambiental</option>
+                                                <option value="ingenieria-ti">Ingeniería en Tecnologías de la Información</option>
+                                                <option value="ingenieria-software">Ingeniería en Software</option>
+                                                <option value="ingenieria-sistemas">Ingeniería en Sistemas</option>
+                                                <option value="biologia">Biología</option>
+                                                <option value="ingenieria-alimentos">Ingeniería de Alimentos</option>
+                                            </optgroup>
+                                            <optgroup label="Facultad de Ciencias Sociales Derecho y Bienestar">
+                                                <option value="derecho">Derecho</option>
+                                                <option value="criminologia">Criminología y Ciencias Forenses</option>
+                                                <option value="economia">Economía</option>
+                                                <option value="trabajo-social">Trabajo Social</option>
+                                                <option value="comunicacion">Comunicación</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                    <div style="flex: 1; min-width: 200px; margin-bottom: 12px;">
+                                        <label for="anio" style="display: block; margin-bottom: 6px; font-weight: 500;">
+                                            <span style="color: red;">*</span> Año de Graduación
+                                        </label>
+                                        <select style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" id="anio" required>
+                                            <option value="" selected disabled>Seleccione el año</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2014">2014</option>
+                                            <option value="2013">2013</option>
+                                            <option value="2012">2012</option>
+                                            <option value="2011">2011</option>
+                                            <option value="2010">2010</option>
+                                            <option value="2009">2009</option>
+                                            <option value="2008">2008</option>
+                                            <option value="2007">2007</option>
+                                            <option value="2006">2006</option>
+                                            <option value="2005">2005</option>
+                                            <option value="2004">2004</option>
+                                            <option value="2003">2003</option>
+                                            <option value="2002">2002</option>
+                                            <option value="2001">2001</option>
+                                            <option value="2000">2000</option>
+                                            <option value="1999">1999</option>
+                                            <option value="1998">1998</option>
+                                            <option value="1997">1997</option>
+                                            <option value="1996">1996</option>
+                                            <option value="1995">1995</option>
+                                            <option value="1994">1994</option>
+                                            <option value="1993">1993</option>
+                                            <option value="1992">1992</option>
+                                            <option value="1991">1991</option>
+                                            <option value="1990">1990</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Información Laboral -->
+                            <div style="margin-bottom: 20px;">
+                                <h5 style="border-bottom: 2px solid #ddd; padding-bottom: 8px; margin-bottom: 15px; color: black;">
+                                    Información Laboral
+                                </h5>
+                                <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                                    <div style="width: 100%; margin-bottom: 12px;">
+                                        <label for="estadoLaboral" style="display: block; margin-bottom: 6px; font-weight: 500;">
+                                            <span style="color: red;">*</span> Estado Laboral Actual
+                                        </label>
+                                        <select style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" id="estadoLaboral" required>
+                                            <option value="" selected disabled>Seleccione su estado laboral</option>
+                                            <option value="empleado">Empleado</option>
+                                            <option value="desempleado">Desempleado</option>
+                                            <option value="emprendimiento">Emprendimiento Propio</option>
+                                            <option value="posgrado">Estudios de Posgrado</option>
+                                        </select>
+                                    </div>
+                                    <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                                        <label for="empresa" style="display: block; margin-bottom: 6px; font-weight: 500;">
+                                            Empresa donde labora (Opcional)
+                                        </label>
+                                        <input type="text" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" id="empresa" placeholder="Nombre de la empresa">
+                                    </div>
+                                    <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                                        <label for="cargo" style="display: block; margin-bottom: 6px; font-weight: 500;">
+                                            Cargo o Puesto Actual (Opcional)
+                                        </label>
+                                        <input type="text" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" id="cargo" placeholder="Ejemplo: Desarrollador Web">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contraseña -->
+                            <div style="margin-bottom: 20px;">
+                                <h5 style="border-bottom: 2px solid #ddd; padding-bottom: 8px; margin-bottom: 15px; color: black;">
+                                    Seguridad de la Cuenta
+                                </h5>
+                                <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                                    <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                                        <label for="password" style="display: block; margin-bottom: 6px; font-weight: 500;">
+                                            <span style="color: red;">*</span> Contraseña
+                                        </label>
+                                        <input type="password" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" id="password" placeholder="••••••••" required>
+                                    </div>
+                                    <div style="flex: 1; min-width: 250px; margin-bottom: 12px;">
+                                        <label for="confirmPassword" style="display: block; margin-bottom: 6px; font-weight: 500;">
+                                            <span style="color: red;">*</span> Confirmar Contraseña
+                                        </label>
+                                        <input type="password" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" id="confirmPassword" placeholder="••••••••" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Términos y condiciones -->
+                            <div style="margin-bottom: 20px;">
+                                <div style="display: flex; align-items: center;">
+                                    <input type="checkbox" id="terminos" style="width: 18px; height: 18px; margin-right: 10px;" required>
+                                    <label style="margin: 0; cursor: pointer;">
+                                        <span style="color: red;">*</span> Acepto los términos y condiciones y autorizo el uso de mis datos para fines de seguimiento académico
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Botones -->
+                            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                                <button type="submit" class="btn btn-uleam-verde" style="padding: 12px 30px; font-size: 16px; min-width: 150px;">
+                                    💾 Registrar
+                                </button>
+                                <a href="login.html" style="padding: 12px 30px; font-size: 16px; min-width: 150px; background-color: #f0f0f0; color: #333; text-decoration: none; border: 1px solid #ccc; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                                    ❌ Cancelar
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background-color: #f8f9fa; padding: 20px; margin-top: 40px;">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <p style="color: #888; margin-bottom: 5px;">
+                🎓 Universidad Laica Eloy Alfaro de Manabí - Sistema de Seguimiento a Graduados
+            </p>
+            <small style="color: #888;">© 2025 - Todos los derechos reservados</small>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validar contraseñas
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Las contraseñas no coinciden');
+                return;
+            }
+            
+            // Simulación de registro exitoso
+            alert('¡Registro exitoso!\n(Función no implementada - solo mockup visual)');
+            // window.location.href = 'login.html';
+        });
+
+        // Validación de cédula ecuatoriana (básica)
+        document.getElementById('cedula').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+
+        // Validación de teléfono
+        document.getElementById('telefono').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    </script>
+    <script src="js/utils.js"></script>
+    <script src="js/registro.js"></script>
+</body>
+</html>
